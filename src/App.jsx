@@ -1,5 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
+import axios from "axios";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-regular-svg-icons'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
@@ -11,11 +12,18 @@ function App() {
   const [itensOnPage, setItensOnPage] = useState(10)
   const [currentPage, setCurrentPage] = useState(0)
 
-  useEffect(() =>{    
-    fetch('http://localhost:3000/')
-    .then(response => response.json())
-    .then(data => setData(data))
+  useEffect(() =>{
+    callApi();
   }, [])
+
+  const callApi = () => {
+    axios
+      .get("http://localhost:3000/products")
+      .then((resp) => {
+      setData(resp.data)
+    });
+  }
+
 
   const pages = data ? Math.ceil(data.length / itensOnPage) : undefined
   const initialPage = currentPage * itensOnPage
@@ -57,7 +65,7 @@ function App() {
         <div className='main-container'>
           {currentItensOnPage.map(item => {
             return(
-              <div className='product'>
+              <div key={item.id} className='product'>
                 <img src={item.image} alt="product" />
                 <p>{item.name} <button><FontAwesomeIcon icon={faHeart} /></button></p>
                 <p>{item.rating}</p>
@@ -85,4 +93,4 @@ function App() {
   }
 }
 
-export default App
+export default App;
