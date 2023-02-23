@@ -1,5 +1,9 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from '@fortawesome/free-regular-svg-icons'
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
+
 import './App.css'
 
 function App() {
@@ -8,9 +12,9 @@ function App() {
   const [currentPage, setCurrentPage] = useState(0)
 
   useEffect(() =>{    
-    fetch('https://fakestoreapi.com/products')
+    fetch('http://localhost:3000/')
     .then(response => response.json())
-    .then(resJSON => setData(resJSON))
+    .then(data => setData(data))
   }, [])
 
   const pages = data ? Math.ceil(data.length / itensOnPage) : undefined
@@ -43,10 +47,11 @@ function App() {
           <input type="search" />
           </section>
           <section>
-            Wish List
+          <FontAwesomeIcon icon={faHeart} />
           </section>
           <section>
-            Cart
+          
+          <FontAwesomeIcon icon={faCartShopping} />
           </section>
         </header>
         <div className='main-container'>
@@ -54,8 +59,9 @@ function App() {
             return(
               <div className='product'>
                 <img src={item.image} alt="product" />
-                <p>{item.title}</p>
-                <p>{item.price}</p>
+                <p>{item.name} <button><FontAwesomeIcon icon={faHeart} /></button></p>
+                <p>{item.rating}</p>
+                <p>${item.price}</p>
               </div>
               )
             })}
