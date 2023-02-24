@@ -1,71 +1,71 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-body{
-    background-color: #F3F4F6;
+body {
+  background-color: #f3f4f6;
 }
 
-.header{
-    border: 1px solid red;
-    display: flex;
-    align-items: center;
-    height: 80px;
-    width: auto;
-    padding: 10px;
-    justify-content: space-between;
+.header {
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  height: 80px;
+  width: auto;
+  padding: 10px;
+  justify-content: space-between;
 }
 
-.header section{
-    border: 1px solid blue;
+.header section {
+  border: 1px solid blue;
 }
 
-.main-container{
-    border: 1px solid red;
-    display: grid;
-    grid-template-columns: repeat(3, 0fr);
-    text-align: center;
-    margin: 10px;
-    overflow: hidden;
-    justify-content: center;
+.main-container {
+  border: 1px solid red;
+  display: grid;
+  grid-template-columns: repeat(3, 0fr);
+  text-align: center;
+  margin: 10px;
+  overflow: hidden;
+  justify-content: center;
 }
 
-.product{
-    border: 1px solid red;
-    width: 280px;
-    height: 450px;
-    margin: 10px;
+.product {
+  border: 1px solid red;
+  width: 280px;
+  height: 450px;
+  margin: 10px;
 }
 
 .product img {
-    width: 240px;
-    height: 260px;
+  width: 240px;
+  height: 260px;
 }
 
-footer{
-    border: 1px solid black;
-    height: 400px;
-    width: auto;
+footer {
+  border: 1px solid black;
+  height: 400px;
+  width: auto;
 }
 
 .actions {
-    display: flex;
-    padding: 5px;
-    margin: 10px;
-    height: 50px;
-    width: 200px;
-    align-items: center;
+  display: flex;
+  padding: 5px;
+  margin: 10px;
+  height: 50px;
+  width: 200px;
+  align-items: center;
 }
 
 .actions button {
-    margin: 5px;
-    font-size: 25px;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
+  margin: 5px;
+  font-size: 25px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
 }
 
-.cart{
-    border: 1px solid red;
+.cart {
+  border: 1px solid red;
 }
