@@ -173,24 +173,7 @@ const products = [
   },
 ];
 
-const wishList = [
-  {
-    id: "20",
-    name: "Women's Trench Coat",
-    description: "Classic beige trench coat with belt",
-    price: 149.99,
-    image: "https://i.postimg.cc/NMM8QgV4/Women-s-Trench-Coat.jpg",
-    rating: 4.5,
-  },
-  {
-    id: "1",
-    name: "Women's Trench Coat",
-    description: "Classic beige trench coat with belt",
-    price: 149.99,
-    image: "https://i.postimg.cc/NMM8QgV4/Women-s-Trench-Coat.jpg",
-    rating: 4.5,
-  },
-];
+let wishList = [];
 
 const cart = [
   {
@@ -266,6 +249,14 @@ server.get("/wishlist/:id", (req, res) => {
   const wishProduct = wishList.filter((product) => product.id === id);
   return res.json(wishProduct);
 });
+
+
+server.delete('/wishlist/:id', (req, res) => {
+  const { id } = req.params;
+  const newList = wishList.filter(product => product.id !== id)
+  wishList = newList
+  return res.json(wishList);
+})
 
 // Products from ecommmerce
 

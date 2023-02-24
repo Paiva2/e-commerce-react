@@ -4,6 +4,7 @@ import axios from "axios";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-regular-svg-icons'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
+import { nanoid } from "nanoid";
 import './App.css'
 
 function App() {
@@ -32,22 +33,20 @@ function App() {
     });
   };
 
-  const object = {
-    id: 21,
-    name: "aaaaaaa",
-    description: "aaaaaaaaaaa",
-    price: 9999.99,
-    image: "https://i.postimg.cc/NMM8QgV4/Women-s-Trench-Coat.jpg",
-    rating: 4.5,
-  };
-  const addWishList = (e) => {
-    e.preventDefault();
-    console.log(itemProduct);
-    //axios.post("http://localhost:3000/products", object).then(() => callApi());
+  const addWishList = (item) => {
+    const object = {
+      id: item.id,
+      name: item.name,
+      description: item.description,
+      price: item.price,
+      image: item.image,
+      rating: item.rating,
+    }
+    axios.post("http://localhost:3000/wishlist/", object).then(() => callApi());
   };
 
   if (data) {
-    return (
+    return (  
       <div className="App">
         <header className="header">
           <section>'Logo'</section>
@@ -68,7 +67,7 @@ function App() {
                 <img src={item.image} alt="product" />
                 <p>
                   {item.name}
-                  <button onClick={() => addWishList(item.id)}>
+                  <button onClick={() => addWishList(item)}>
                     <FontAwesomeIcon icon={faHeart} />
                   </button>
                 </p>
