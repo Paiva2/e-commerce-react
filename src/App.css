@@ -13,6 +13,7 @@ body{
     align-items: center;
     height: 80px;
     width: auto;
+    padding: 10px;
     justify-content: space-between;
 }
 
@@ -38,12 +39,33 @@ body{
 }
 
 .product img {
-    width: 250px;
-    height: 240px;
+    width: 240px;
+    height: 260px;
 }
 
 footer{
     border: 1px solid black;
     height: 400px;
     width: auto;
+}
+
+.actions {
+    display: flex;
+    padding: 5px;
+    margin: 10px;
+    height: 50px;
+    width: 200px;
+    align-items: center;
+}
+
+.actions button {
+    margin: 5px;
+    font-size: 25px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+.cart{
+    border: 1px solid red;
 }

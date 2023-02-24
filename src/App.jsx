@@ -1,26 +1,26 @@
-import React, { useRef } from 'react'
-import { useEffect, useState } from 'react'
+import React, { useRef } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart } from '@fortawesome/free-regular-svg-icons'
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import { faCartShopping, faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import { nanoid } from "nanoid";
-import './App.css'
+import "./App.css";
 
 function App() {
   const [data, setData] = useState();
   const [itensOnPage, setItensOnPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(0);
-  const itemProduct = useRef()
-  const pagesArr = []
+  const itemProduct = useRef();
+  const pagesArr = [];
 
-    const pageQuantity = data ? Math.ceil(data.length / itensOnPage) : undefined
-    const initialPage = data ? currentPage * itensOnPage : undefined
-    const finalPage = initialPage + itensOnPage
-    const showItens =  data ? data.slice(initialPage, finalPage) : undefined
+  const pageQuantity = data ? Math.ceil(data.length / itensOnPage) : undefined;
+  const initialPage = data ? currentPage * itensOnPage : undefined;
+  const finalPage = initialPage + itensOnPage;
+  const showItens = data ? data.slice(initialPage, finalPage) : undefined;
 
-  for(let i = 0; i < pageQuantity; i++){
-    pagesArr.push(i + 1)
+  for (let i = 0; i < pageQuantity; i++) {
+    pagesArr.push(i + 1);
   }
 
   useEffect(() => {
@@ -33,31 +33,45 @@ function App() {
     });
   };
 
-  const addWishList = (item) => {
+  const objectBody = (productData) => {
     const object = {
-      id: item.id,
-      name: item.name,
-      description: item.description,
-      price: item.price,
-      image: item.image,
-      rating: item.rating,
-    }
-    axios.post("http://localhost:3000/wishlist/", object).then(() => callApi());
+      id: productData.id,
+      name: productData.name,
+      description: productData.description,
+      price: productData.price,
+      image: productData.image,
+      rating: productData.rating,
+    };
+    return object
+  }
+
+  const addWishList = (product) => {
+    axios.post("http://localhost:3000/wishlist/", objectBody(product)).then(() => callApi());
   };
 
+  const addToCart = (product) => {
+    axios.post("http://localhost:3000/cart/", objectBody(product)).then(() => callApi());
+  }
+
   if (data) {
-    return (  
+    return (
       <div className="App">
         <header className="header">
           <section>'Logo'</section>
           <section>
             <input type="search" />
           </section>
-          <section>
+          <section className="actions">
+            <div className="cart">
+              <button>
             <FontAwesomeIcon icon={faHeart} />
-          </section>
-          <section>
+              </button>
+            </div>
+            <div className="wish-list">
+              <button>
             <FontAwesomeIcon icon={faCartShopping} />
+              </button>
+            </div>
           </section>
         </header>
         <div className="main-container">
@@ -70,6 +84,9 @@ function App() {
                   <button onClick={() => addWishList(item)}>
                     <FontAwesomeIcon icon={faHeart} />
                   </button>
+                  <button onClick={() => addToCart(item)}>
+                    <FontAwesomeIcon icon={faCartPlus} />
+                  </button>
                 </p>
                 <p>{item.rating}</p>
                 <p>${item.price}</p>
@@ -77,7 +94,13 @@ function App() {
             );
           })}
         </div>
-        <div>{pagesArr.map((item, index) => <button value={currentPage} onClick={() => setCurrentPage(index)}>{item}</button>)}</div>
+        <div>
+          {pagesArr.map((item, index) => (
+            <button value={currentPage} onClick={() => setCurrentPage(index)}>
+              {item}
+            </button>
+          ))}
+        </div>
         <footer>
           <div>Social medias</div>
           <div>Payment Options</div>
