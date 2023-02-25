@@ -161,6 +161,31 @@
       "rating": "4.5"
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "id": "3",
+      "name": "Women's Jeans",
+      "description": "Skinny jeans",
+      "price": 69.99,
+      "image": "https://i.postimg.cc/90DBYWYM/Women-s-Jeans.jpg",
+      "rating": 4.7
+    },
+    {
+      "id": "2",
+      "name": "Men's T-Shirt",
+      "description": "Classic black t-shirt with white logo",
+      "price": 29.99,
+      "image": "https://i.postimg.cc/Jz5dnz6V/men-t-shirt.jpg",
+      "rating": 4.2
+    },
+    {
+      "id": "1",
+      "name": "Floral Women's Blouse",
+      "description": "Cotton blouse with floral print",
+      "price": 49.99,
+      "image": "https://i.postimg.cc/Dzfpb3HW/floral-blouse.jpg",
+      "rating": 4.5
+    }
+  ],
   "wishlist": []
 }

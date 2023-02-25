@@ -4,7 +4,7 @@ const PageButtons = ({setCurrentPage, pagesArr, currentPage}) => {
   return (
     <div>
       {pagesArr.map((item, index) => (
-        <button value={currentPage} onClick={() => setCurrentPage(index)}>
+        <button key={index} value={currentPage} onClick={() => setCurrentPage(index)}>
           {item}
         </button>
       ))}

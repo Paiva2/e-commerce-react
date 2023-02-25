@@ -2,8 +2,6 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
-import Header from "./Header";
-import Footer from "./Footer";
 import PageButtons from './PageButtons'
 
 const Products = ({
@@ -16,7 +14,6 @@ const Products = ({
 }) => {
   return (
     <>
-      <Header />
       <div className="main-container">
         {showItens.map((item) => {
           return (
@@ -40,9 +37,7 @@ const Products = ({
       <PageButtons
         setCurrentPage={setCurrentPage}
         currentPage={currentPage}
-        pagesArr={pagesArr}
-      />
-      <Footer />
+        pagesArr={pagesArr}/>
     </>
   );
 };

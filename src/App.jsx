@@ -1,10 +1,14 @@
 import { React, useEffect, useState } from "react";
 import axios from "axios";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { nanoid } from "nanoid";
 import "./App.css";
 import Products from "./Products";
 import NotFound from "./NotFound";
+import WishList from "./WishList";
+import Cart from "./Cart";
+import Header from "./Header";
+import Footer from "./Footer";
 
 //browserrouter >> routes > route path="" element={}
 
@@ -59,21 +63,26 @@ function App() {
 
   if (data) {
     return (
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Products
-              showItens={showItens}
-              addWishList={addWishList}
-              addToCart={addToCart}
-              setCurrentPage={setCurrentPage}
-              currentPage={currentPage}
-              pagesArr={pagesArr}
-            />}
-          />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <BrowserRouter>
+        <Header addToCart={addToCart} />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Products
+                showItens={showItens}
+                addWishList={addWishList}
+                addToCart={addToCart}
+                setCurrentPage={setCurrentPage}
+                currentPage={currentPage}
+                pagesArr={pagesArr} />}
+              />
+          <Route path={"/wish-list"} element={<WishList />} />
+          <Route path={"/cart"} element={<Cart />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     );
   }
 }

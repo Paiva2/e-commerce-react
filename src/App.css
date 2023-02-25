@@ -29,6 +29,8 @@ body {
   margin: 10px;
   overflow: hidden;
   justify-content: center;
+  padding: 10px;
+  height: 2000px;
 }
 
 .product {
@@ -68,4 +70,13 @@ footer {
 
 .cart {
   border: 1px solid red;
+}
+
+.wish-list{
+  border: 1px solid green;
+}
+
+.wish-list img {
+  width: 240px;
+  height: 260px;
 }
