@@ -4,14 +4,14 @@ import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
 
-const Header = () => {
+const Header = ({searchValue, searchState}) => {
   return (
     <header className="header">
-      <NavLink to={'/'}>
-      <section>'Logo'</section>
+      <NavLink to={"/"}>
+        <section>'Logo'</section>
       </NavLink>
       <section>
-        <input type="search" />
+        <input onChange={({target}) => searchState(target.value)} type="text" />
       </section>
       <section className="actions">
         <div className="wish-list">

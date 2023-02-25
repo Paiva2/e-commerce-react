@@ -24,7 +24,9 @@ const WishList = () => {
   };
   if (wishList) {
     if (wishList.length === 0)
-      return <PlaceHolder classN='main-container' text={"Empty Wish List..."} />;
+      return (
+        <PlaceHolder classN="main-container" text={"Empty Wish List..."} />
+      );
     return (
       <div className="main-container">
         <div className="wish-products">

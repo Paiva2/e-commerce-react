@@ -13,17 +13,18 @@ function App() {
   const [data, setData] = useState();
   const [itensOnPage, setItensOnPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(0);
+  const [searchValue, setSearchValue] = useState('')
   const pagesArr = [];
 
   const pageQuantity = data ? Math.ceil(data.length / itensOnPage) : undefined;
   const initialPage = data ? currentPage * itensOnPage : undefined;
   const finalPage = initialPage + itensOnPage;
-  const showItens = data ? data.slice(initialPage, finalPage) : undefined;
+
 
   for (let i = 0; i < pageQuantity; i++) {
     pagesArr.push(i + 1);
   }
-  
+
   useEffect(() => {
     callApi();
   }, []);
@@ -46,7 +47,7 @@ function App() {
     };
     return object;
   };
-  
+
   const addWishList = (product) => {
     axios
       .post("http://localhost:3000/wishlist/", objectBody(product))
@@ -60,21 +61,24 @@ function App() {
   };
 
   if (data) {
+    const filteredProducts = data.filter(product => product.name.toLowerCase().includes(searchValue.toLowerCase()))
+    const showItens = data ? filteredProducts.slice(initialPage, finalPage) : undefined;
     return (
       <BrowserRouter>
-        <Header addToCart={addToCart} />
+        <Header addToCart={addToCart} searchValue={searchValue} searchState={setSearchValue} />
         <Routes>
           <Route
             path="/"
             element={
               <Products
-                showItens={showItens}
+                showItens={searchValue ? filteredProducts : showItens}
                 addWishList={addWishList}
                 addToCart={addToCart}
                 setCurrentPage={setCurrentPage}
                 currentPage={currentPage}
-                pagesArr={pagesArr} />}
-              />
+                pagesArr={pagesArr}
+              />}
+          />
           <Route path={"/wish-list"} element={<WishList />} />
           <Route path={"/cart"} element={<Cart />} />
           <Route path="*" element={<NotFound />} />
