@@ -27,8 +27,15 @@ const Products = ({
   function closeModal() {
     setIsOpen(false);
   }
+  const stars = [1, 2, 3, 4, 5];
 
-  
+  const ratingColors = (rate) => {
+    if (rate === 1) return "one-star";
+    if (rate === 2) return "two-star";
+    if (rate === 3) return "three-star";
+    if (rate === 4) return "four-star";
+    if (rate === 5) return "five-star";
+  };
 
   return (
     <>
@@ -63,9 +70,19 @@ const Products = ({
                   <FontAwesomeIcon icon={faCartPlus} />
                 </button>
               </p>
-              <p>
-                {item.rating} <FaStar />
-              </p>
+              <div className="rating-stars">
+                <p>
+                  {stars.map((star, i) => {
+                    console.log(Math.ceil(item.rating));
+                    return (
+                      <FaStar
+                        key={i}
+                        className={ratingColors(Math.ceil(item.rating))}
+                      />
+                    );
+                  })}
+                </p>
+              </div>
               <p>${item.price}</p>
             </div>
           );

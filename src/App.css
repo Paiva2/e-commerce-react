@@ -173,3 +173,27 @@ footer {
   width: 600px;
   height: 500px;
 }
+
+.one-star:nth-child(-n+1){
+  color: rgb(238, 215, 11);
+}
+
+.two-star:nth-child(-n+2){
+  color: rgb(238, 215, 11);
+}
+
+.three-star:nth-child(-n+3){
+  color: rgb(238, 215, 11);
+}
+
+.four-star:nth-child(-n+4){
+  color: rgb(238, 215, 11);
+}
+
+.five-star:nth-child(-n+5){
+  color: rgb(238, 215, 11);
+}
+
+.rating-stars{
+  color: rgb(177, 171, 171);
+}

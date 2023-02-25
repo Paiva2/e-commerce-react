@@ -15,7 +15,7 @@
       "description": "Classic black t-shirt with white logo",
       "price": 29.99,
       "image": "https://i.postimg.cc/Jz5dnz6V/men-t-shirt.jpg",
-      "rating": 4.2,
+      "rating": 3,
       "quantity": 1
     },
     {
@@ -69,7 +69,7 @@
       "description": "Slim-fit chinos in khaki",
       "price": 59.99,
       "image": "https://i.postimg.cc/bJBxJ7fj/Men-s-Chinos.jpg",
-      "rating": 3.9,
+      "rating": 3,
       "quantity": 1
     },
     {
@@ -104,7 +104,7 @@
       "description": "Cable knit sweater in beige",
       "price": 69.99,
       "image": "https://i.postimg.cc/bdX101vC/Men-s-Sw-eater.jpg",
-      "rating": 4.2,
+      "rating": 3,
       "quantity": 1
     },
     {
@@ -158,7 +158,7 @@
       "description": "Brown leather belt with silver buckle",
       "price": 39.99,
       "image": "https://i.postimg.cc/zGCFj2Kn/Men-s-Leather-Belt.jpg",
-      "rating": 3.9,
+      "rating": 2,
       "quantity": 1
     },
     {
