@@ -1,16 +1,13 @@
 import { React, useEffect, useState } from "react";
-import axios from "axios";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import { nanoid } from "nanoid";
 import "./App.css";
+import axios from "axios";
 import Products from "./Products";
 import NotFound from "./NotFound";
 import WishList from "./WishList";
 import Cart from "./Cart";
 import Header from "./Header";
 import Footer from "./Footer";
-
-//browserrouter >> routes > route path="" element={}
 
 function App() {
   const [data, setData] = useState();
@@ -26,7 +23,7 @@ function App() {
   for (let i = 0; i < pageQuantity; i++) {
     pagesArr.push(i + 1);
   }
-
+  
   useEffect(() => {
     callApi();
   }, []);
@@ -49,7 +46,7 @@ function App() {
     };
     return object;
   };
-
+  
   const addWishList = (product) => {
     axios
       .post("http://localhost:3000/wishlist/", objectBody(product))

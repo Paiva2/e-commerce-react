@@ -180,34 +180,6 @@
       "quantity": 1
     }
   ],
-  "cart": [
-    {
-      "id": "1",
-      "name": "Floral Women's Blouse",
-      "description": "Cotton blouse with floral print",
-      "price": 49.99,
-      "image": "https://i.postimg.cc/Dzfpb3HW/floral-blouse.jpg",
-      "rating": 4.5,
-      "quantity": 3
-    },
-    {
-      "id": "6",
-      "name": "Men's Polo Shirt",
-      "description": "Classic polo shirt with logo",
-      "price": 39.99,
-      "image": "https://i.postimg.cc/Vv0jbKz0/Men-s-Polo-Shirt.jpg",
-      "rating": 4,
-      "quantity": 1
-    },
-    {
-      "id": "5",
-      "name": "Women's Cardigan",
-      "description": "Knit cardigan with button closure",
-      "price": 59.99,
-      "image": "https://i.postimg.cc/3RdLnCKY/Women-s-Cardigan.jpg",
-      "rating": 4.6,
-      "quantity": 1
-    }
-  ],
+  "cart": [],
   "wishlist": []
 }

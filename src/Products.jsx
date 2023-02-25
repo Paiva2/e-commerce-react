@@ -1,8 +1,11 @@
-import React from "react";
+import { React, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
-import PageButtons from './PageButtons'
+import PageButtons from "./PageButtons";
+import ProductModal from "./ProductModal";
+import Modal from "react-modal";
+Modal.setAppElement("#root");
 
 const Products = ({
   showItens,
@@ -12,13 +15,25 @@ const Products = ({
   currentPage,
   pagesArr,
 }) => {
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [clickedProduct, setclickedProduct] = useState([])
+
+  function openModal(...productClicked) {
+    setIsOpen(true);
+    setclickedProduct(productClicked);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
   return (
     <>
       <div className="main-container">
         {showItens.map((item) => {
           return (
             <div key={item.id} className="product">
-              <img src={item.image} alt="product" />
+              <img onClick={() => openModal(item.name, item.image, item.description, item.price, item.rating)} src={item.image} alt="product" />
+              <ProductModal modalIsOpen={modalIsOpen} product={clickedProduct} closeModal={closeModal} />
               <p>
                 {item.name}
                 <button onClick={() => addWishList(item)}>
@@ -37,7 +52,9 @@ const Products = ({
       <PageButtons
         setCurrentPage={setCurrentPage}
         currentPage={currentPage}
-        pagesArr={pagesArr}/>
+        pagesArr={pagesArr}
+      />
+
     </>
   );
 };

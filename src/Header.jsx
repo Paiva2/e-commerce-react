@@ -7,7 +7,9 @@ import { NavLink } from "react-router-dom";
 const Header = () => {
   return (
     <header className="header">
+      <NavLink to={'/'}>
       <section>'Logo'</section>
+      </NavLink>
       <section>
         <input type="search" />
       </section>

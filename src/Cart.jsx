@@ -7,7 +7,7 @@ import "./App.css";
 
 const Cart = () => {
   const [cart, setCart] = useState(undefined);
-  const [totalQuantity, setTotalQuantity] = useState(1)
+  const [totalQuantity, setTotalQuantity] = useState('')
   const [totalPrice, setTotalPrice] = useState('')
 
   useEffect(() => {
@@ -16,18 +16,18 @@ const Cart = () => {
 
   const callApi = () => {
     axios.get("http://localhost:3000/cart").then((resp) => {
-
       setCart(resp.data);
 
-      setTotalQuantity(resp.data.map(item => item.quantity)
-      .reduce((acc, item) => acc + item));
-      
-      setTotalPrice(resp.data.map(item => item.price)
-      .reduce((acc, item) => acc + item));
-    });    
+      setTotalQuantity(
+        resp.data.map((item) => item.quantity).reduce((acc, item) => acc + item)
+      );
+
+      setTotalPrice(
+        resp.data.map((item) => item.price).reduce((acc, item) => acc + item)
+      );
+    });
   };
 
-  console.log(totalPrice);
   const delCartItem = (id) => {
     axios.delete(`http://localhost:3000/cart/${id}`).then(() => {callApi()});
   };
@@ -80,7 +80,7 @@ const Cart = () => {
         </div>
 
         <div className="card-payment">
-          <h2>TOTAL: {(totalPrice * totalQuantity).toFixed(2)}</h2>
+          <h2>TOTAL: ${(totalPrice * totalQuantity).toFixed(2)}</h2>
         </div>
 
       </div>
