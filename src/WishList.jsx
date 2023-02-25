@@ -18,18 +18,23 @@ const WishList = () => {
   };
 
   const delWishItem = (id) => {
-    axios.delete(`http://localhost:3000/wishlist/${id}`).then(() => {callApi()});
-  }
+    axios.delete(`http://localhost:3000/wishlist/${id}`).then(() => {
+      callApi();
+    });
+  };
   if (wishList) {
-    if (wishList.length === 0) return <PlaceHolder text={'Empty Wish List...'} /> 
+    if (wishList.length === 0)
+      return <PlaceHolder classN='main-container' text={"Empty Wish List..."} />;
     return (
       <div className="main-container">
         <div className="wish-products">
           {wishList.map((product) => {
             return (
               <div className="wish-list">
-                <img src={product.image} alt="product" />
-                <p>{product.name}</p>
+                <div>
+                  <p>{product.name}</p>
+                  <img src={product.image} alt="product" />
+                </div>
                 <p>{product.rating}</p>
                 <p>${product.price}</p>
                 <button onClick={() => addToCart({})}>

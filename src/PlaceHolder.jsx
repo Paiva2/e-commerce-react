@@ -1,8 +1,8 @@
 import React from 'react'
 
-const PlaceHolder = ({text}) => {
+const PlaceHolder = ({text, classN}) => {
   return (
-    <div className='main-container'><h2>{text}</h2></div>
+    <div className={classN}><h2>{text}</h2></div>
   )
 }
 

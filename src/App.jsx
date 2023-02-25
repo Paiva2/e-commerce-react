@@ -45,6 +45,7 @@ function App() {
       price: productData.price,
       image: productData.image,
       rating: productData.rating,
+      quantity: productData.quantity,
     };
     return object;
   };
