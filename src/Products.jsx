@@ -56,20 +56,12 @@ const Products = ({
                 src={item.image}
                 alt="product"
               />
+              <h3>{item.name}</h3>
               <ProductModal
                 modalIsOpen={modalIsOpen}
                 product={clickedProduct}
                 closeModal={closeModal}
               />
-              <p>
-                {item.name}
-                <button onClick={() => addWishList(item)}>
-                  <FontAwesomeIcon icon={faHeart} />
-                </button>
-                <button onClick={() => addToCart(item)}>
-                  <FontAwesomeIcon icon={faCartPlus} />
-                </button>
-              </p>
               <div className="rating-stars">
                 <p>
                   {stars.map((star, i) => {
@@ -83,7 +75,24 @@ const Products = ({
                   })}
                 </p>
               </div>
-              <p>${item.price}</p>
+
+              <div className="product-footer">
+              <div className="product-buttons">
+              <p>
+                <button onClick={() => addWishList(item)}>
+                  <FontAwesomeIcon className="wish-btn" icon={faHeart} />
+                </button>
+                <button onClick={() => addToCart(item)}>
+                  <FontAwesomeIcon  className="add-cart-btn" icon={faCartPlus} />
+                </button>
+              </p>
+              </div>
+              <div className="product-price">
+              <p>${item.price}</p>  
+              </div>
+
+              </div>
+
             </div>
           );
         })}

@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 * {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
+
 }
 
 body {
@@ -35,21 +38,51 @@ body {
 }
 
 .product {
-  border: 1px solid red;
-  width: 280px;
-  height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  box-shadow: 3px 4px 7px -3px rgba(209, 204, 204, 0.75);
+  height: 470px;
   margin: 10px;
+  font-weight: bold;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+.product-price p{
+  font-size: 18px;
+  color: rgb(78, 180, 103);
+}
+
+.product-footer{
+  display: flex;
+  border-top: 1px solid rgb(202, 187, 187);
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+}
+
+.product-buttons button {
+  font-size: 23px;
+  background-color: transparent;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 2px;
+  border: none;
 }
 
 .product img {
-  width: 240px;
-  height: 260px;
+  width: 350px;
+  height: 350px;
   cursor: pointer;
 }
 
 footer {
-  border: 1px solid black;
   height: 200px;
+  border: 1px solid black;
   width: auto;
 }
 
@@ -64,10 +97,25 @@ footer {
 
 .actions button {
   margin: 5px;
-  font-size: 25px;
+  font-size: 30px;
   cursor: pointer;
   background-color: transparent;
   border: none;
+}
+
+.product-buttons button:hover{
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.2);
+  transition: all 0.4s;
+}
+
+.wish-btn:hover{
+  color: rgb(170, 58, 58);
+}
+
+.add-cart-btn:hoveR{
+  color: rgb(38, 81, 199);
 }
 
 .wish-list{

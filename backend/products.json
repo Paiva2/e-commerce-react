@@ -23,7 +23,7 @@
       "name": "Women's Jeans",
       "description": "Skinny jeans",
       "price": 69.99,
-      "image": "https://i.postimg.cc/90DBYWYM/Women-s-Jeans.jpg",
+      "image": "https://i.postimg.cc/HWSfPfz0/Women-s-Jeans.jpg",
       "rating": 4.7,
       "quantity": 1
     },
@@ -41,7 +41,7 @@
       "name": "Women's Cardigan",
       "description": "Knit cardigan with button closure",
       "price": 59.99,
-      "image": "https://i.postimg.cc/3RdLnCKY/Women-s-Cardigan.jpg",
+      "image": "https://i.postimg.cc/vZwXPzJL/Women-s-Cardigan.jpg",
       "rating": 4.6,
       "quantity": 1
     },
@@ -50,16 +50,16 @@
       "name": "Men's Polo Shirt",
       "description": "Classic polo shirt with logo",
       "price": 39.99,
-      "image": "https://i.postimg.cc/Vv0jbKz0/Men-s-Polo-Shirt.jpg",
+      "image": "https://i.postimg.cc/2ym8cgxN/Men-s-Polo-Shirt.jpg",
       "rating": 4,
       "quantity": 1
     },
     {
       "id": "7",
-      "name": "Women's Denim Skirt",
-      "description": "A-line denim skirt with button closure",
+      "name": "Women's Denim Jacket",
+      "description": "A-line denim Jacket with button closure",
       "price": 49.99,
-      "image": "https://i.postimg.cc/GmC5dyjx/Women-s-Denim-Skirt.jpg",
+      "image": "https://i.postimg.cc/pTKLBPzB/Women-s-Denim.jpg",
       "rating": 4.3,
       "quantity": 1
     },
@@ -68,7 +68,7 @@
       "name": "Men's Chinos",
       "description": "Slim-fit chinos in khaki",
       "price": 59.99,
-      "image": "https://i.postimg.cc/bJBxJ7fj/Men-s-Chinos.jpg",
+      "image": "https://i.postimg.cc/g0XJnV0Q/Men-s-Chinos.jpg",
       "rating": 3,
       "quantity": 1
     },
@@ -77,7 +77,7 @@
       "name": "Women's Leather Jacket",
       "description": "Fitted leather jacket with zipper",
       "price": 129.99,
-      "image": "https://i.postimg.cc/05z3fxQD/Women-s-Leather-Jacket.jpg",
+      "image": "https://i.postimg.cc/SNSxWFsW/Women-s-Leather-Jacket.png",
       "rating": 4.8,
       "quantity": 1
     },
@@ -103,7 +103,7 @@
       "name": "Men's Sweater",
       "description": "Cable knit sweater in beige",
       "price": 69.99,
-      "image": "https://i.postimg.cc/bdX101vC/Men-s-Sw-eater.jpg",
+      "image": "https://i.postimg.cc/sg0xj635/Men-s-Sweater.jpg",
       "rating": 3,
       "quantity": 1
     },
@@ -121,7 +121,7 @@
       "name": "Men's Dress Shirt",
       "description": "Crisp white dress shirt with French cuffs",
       "price": 79.99,
-      "image": "https://i.postimg.cc/NjqxRv9s/Men-s-Dress-Shirt.jpg",
+      "image": "https://i.postimg.cc/Wp64Fb2N/Men-s-Dress-Shirt.jpg",
       "rating": 4.1,
       "quantity": 1
     },
@@ -148,7 +148,7 @@
       "name": "Women's Tank Top",
       "description": "Sleeveless tank top with lace detail",
       "price": 29.99,
-      "image": "https://i.postimg.cc/N0Q7P8kZ/Women-s-Tank-Top.jpg",
+      "image": "https://i.postimg.cc/Nj8DZXYh/Women-s-Tank-Top.jpg",
       "rating": 4.3,
       "quantity": 1
     },
