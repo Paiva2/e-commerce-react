@@ -1,4 +1,4 @@
-import { React, useRef, useState } from "react";
+import { React, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
@@ -15,9 +15,7 @@ const Products = ({
   setCurrentPage,
   currentPage,
   pagesArr,
-  pageQuantity,
   initialPage,
-  finalPage
 }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [clickedProduct, setclickedProduct] = useState([]);
@@ -135,9 +133,7 @@ const Products = ({
         setCurrentPage={setCurrentPage}
         currentPage={currentPage}
         pagesArr={pagesArr}
-        pageQuantity={pageQuantity}
         initialPage={initialPage}
-        finalPage={finalPage}
       />
     </div>
   );

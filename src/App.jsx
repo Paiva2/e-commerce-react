@@ -112,8 +112,6 @@ function App() {
                 currentPage={currentPage}
                 pagesArr={pagesArr}
                 initialPage={initialPage}
-                pageQuantity={pageQuantity}
-                finalPage={finalPage}
               />}
           />
           <Route path={"/wish-list"} element={<WishList />} />

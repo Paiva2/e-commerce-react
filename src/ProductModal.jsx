@@ -1,4 +1,5 @@
 import React from "react";
+import { MdClose} from "react-icons/md";
 import Modal from "react-modal";
 
 const ProductModal = ({ modalIsOpen, closeModal, product }) => {
@@ -10,13 +11,11 @@ const ProductModal = ({ modalIsOpen, closeModal, product }) => {
       overlayClassName="modal-overlay"
       className="modal-content"
     >
-      <h2>{product[0]}</h2>
-      <hr />
       <img src={product[1]} alt="Product image" />
-      <p>{product[2]}</p>
-      <p>Price: ${product[3]}</p>
-      <p>Rating: {product[4]}</p>
-      <button onClick={closeModal}>Close</button>
+      <h2>{product[0]}</h2>
+      <p><b>Description:</b> {product[2]}</p>
+      <p><b>Price:</b> <span className="price-span">${product[3]}</span></p>
+      <button onClick={closeModal}>Close <MdClose className="close-icon" /></button>
     </Modal>
   );
 };

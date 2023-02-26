@@ -2,7 +2,7 @@ import React from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 
-const PageButtons = ({setCurrentPage, pagesArr, currentPage, pageQuantity, initialPage, finalPage}) => {
+const PageButtons = ({setCurrentPage, pagesArr, currentPage, initialPage}) => {
 
   const pageArrowLeft = () => {
     if(!initialPage) return

@@ -1,9 +1,11 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart, faSearch, faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
+import { HiOutlineShoppingBag} from "react-icons/hi";
+import { AiOutlineHeart} from "react-icons/ai";
 
-const Header = ({searchValue, searchState}) => {
+const Header = ({searchState}) => {
   return (
     <header className="header">
       <NavLink to={"/"}>
@@ -21,14 +23,14 @@ const Header = ({searchValue, searchState}) => {
         <div className="wish-list">
           <NavLink to={"/wish-list"}>
             <button className="wish-list-header">
-              <FontAwesomeIcon icon={faHeart} />
+              <AiOutlineHeart />
             </button>
           </NavLink>
         </div>
         <div className="cart">
           <NavLink to={"/cart"}>
             <button className="cart-header">
-              <FontAwesomeIcon icon={faShoppingCart} />
+              <HiOutlineShoppingBag />
             </button>
           </NavLink>
         </div>
