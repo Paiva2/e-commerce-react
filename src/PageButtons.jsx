@@ -1,31 +1,58 @@
 import React from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-
-const PageButtons = ({setCurrentPage, pagesArr, currentPage, initialPage}) => {
-
+const PageButtons = ({
+  setCurrentPage,
+  pagesArr,
+  currentPage,
+  initialPage,
+}) => {
   const pageArrowLeft = () => {
-    if(!initialPage) return
-    setCurrentPage(oldVal => oldVal - 1)
-  }
-  
+    if (!initialPage) return;
+    setCurrentPage((oldVal) => oldVal - 1);
+  };
+
   const pageArrowRight = () => {
-      if(currentPage === pagesArr.length - 1) return
-      setCurrentPage(oldVal => oldVal + 1)
-  }
+    if (currentPage === pagesArr.length - 1) return;
+    setCurrentPage((oldVal) => oldVal + 1);
+  };
 
   return (
     <div className="page-btn-container">
-      <div className="page-btns">
-        <button onClick={pageArrowLeft} ><FaArrowLeft className="arrow-icon-left" /></button>
-      {pagesArr.map((item, index) => (
-        <button key={index} value={currentPage} onClick={() => setCurrentPage(index)}>
-          {item}
+        <button className="arrow-icon"  onClick={pageArrowLeft}>
+          <FaArrowLeft />
         </button>
-      ))}
-      <button onClick={pageArrowRight}><FaArrowRight className="arrow-icon-right" /></button>
+        {pagesArr.map((item, index) => {
+          if (item === currentPage + 1) {
+            return (
+              <button
+                onClick={() => setCurrentPage(index)}
+                className="active-page-btn"
+                key={index}
+                value={currentPage}
+              >
+                {item}
+              </button>
+            );
+          } else {
+            return (
+              <button
+                onClick={() => setCurrentPage(index)}
+                className={
+                  currentPage + 1 ? "inative-page-btn" : "inative-page-btn"
+                }
+                key={index}
+                value={currentPage}
+              >
+                {item}
+              </button>
+            );
+          }
+        })}
+        <button className="arrow-icon" onClick={pageArrowRight}>
+          <FaArrowRight />
+        </button>
       </div>
-    </div>
   );
 };
 

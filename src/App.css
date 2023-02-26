@@ -435,25 +435,39 @@ footer {
 }
 
 .page-btn-container button {
-  background-color: transparent;
   border: none;
   border-radius: 20px;
-  width: 35px;
-  font-size: 20px;
   cursor: pointer;
-  margin: 8px;
-  box-shadow: 3px 4px 7px -3px rgba(82, 80, 80, 0.75);
-  background-color: #81bed6;
-  color: white;
-  height: 35px;
+  margin: 5px;
 }
 
-.page-btn-container button:hover {
+.inative-page-btn{
+  background-color: #81bed6;
+  box-shadow: 3px 4px 7px -3px rgba(82, 80, 80, 0.75);
+}
+
+.active-page-btn{
+  background-color: #43a1c7;
+  box-shadow: 3px 4px 7px -3px rgba(82, 80, 80, 0.75);
+}
+
+.active-page-btn, .inative-page-btn{
+  color: white;
+  height: 35px;
+  font-size: 18px;  
+  width: 35px;
+  transition: 0.4s all;
+}
+
+.inative-page-btn:hover{
   background-color: #43a1c7;
   transition: 0.4s all;
 }
 
-.arrow-icon-left,
-.arrow-icon-right {
+.arrow-icon{
   font-size: 15px;
+  border: none;
+  width: 30px;
+  color: black;
+  height: 30px;
 }
