@@ -17,7 +17,7 @@ const Header = ({searchValue, searchState}) => {
         <input placeholder="Search!" onChange={({target}) => searchState(target.value)} type="text" />
       </div>
 
-      <section className="actions">
+      <section className="header-buttons">
         <div className="wish-list">
           <NavLink to={"/wish-list"}>
             <button className="wish-list-header">

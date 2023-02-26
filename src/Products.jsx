@@ -15,6 +15,9 @@ const Products = ({
   setCurrentPage,
   currentPage,
   pagesArr,
+  pageQuantity,
+  initialPage,
+  finalPage
 }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [clickedProduct, setclickedProduct] = useState([]);
@@ -58,7 +61,7 @@ const Products = ({
               <input type="checkbox" name="female" />
             </label>
           </div>
-          <div className="price-input">
+          <div className="price-wrapper">
           <h2>Price</h2>
             <label htmlFor="max-price">
               Max <input placeholder="ex: 200" type="text" name="price" />
@@ -95,7 +98,6 @@ const Products = ({
                 <div className="rating-stars">
                   <p>
                     {stars.map((star, i) => {
-                      console.log(Math.ceil(item.rating));
                       return (
                         <FaStar
                           key={i}
@@ -129,6 +131,14 @@ const Products = ({
           })}
         </div>
       </div>
+      <PageButtons
+        setCurrentPage={setCurrentPage}
+        currentPage={currentPage}
+        pagesArr={pagesArr}
+        pageQuantity={pageQuantity}
+        initialPage={initialPage}
+        finalPage={finalPage}
+      />
     </div>
   );
 };
