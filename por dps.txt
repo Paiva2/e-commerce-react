@@ -1,0 +1,10 @@
+div className="product-title">
+          <p>Products</p>
+        </div> 
+
+
+<PageButtons
+        setCurrentPage={setCurrentPage}
+        currentPage={currentPage}
+        pagesArr={pagesArr}
+      />

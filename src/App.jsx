@@ -1,5 +1,6 @@
 import { React, useEffect, useState } from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
+import Swal from "sweetalert2";
 import "./App.css";
 import axios from "axios";
 import Products from "./Products";
@@ -43,12 +44,44 @@ function App() {
     axios
       .post("http://localhost:3000/wishlist/", objectBody(product))
       .then(() => callApi());
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'bottom-end',
+        showConfirmButton: false,
+        timer: 1200,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      
+      Toast.fire({
+        icon: 'success',
+        title: 'Product added to wish list!'
+      })
   };
 
   const addToCart = (product) => {
     axios
       .post("http://localhost:3000/cart/", objectBody(product))
       .then(() => callApi());
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'bottom-end',
+        showConfirmButton: false,
+        timer: 1200,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      
+      Toast.fire({
+        icon: 'success',
+        title: 'Product added to cart!'
+      })
   };
 
   if (data) {

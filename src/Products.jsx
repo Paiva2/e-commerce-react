@@ -38,71 +38,98 @@ const Products = ({
   };
 
   return (
-    <>
-      <div className="main-container">
-        {showItens.map((item) => {
-          return (
-            <div key={item.id} className="product">
-              <img
-                onClick={() =>
-                  openModal(
-                    item.name,
-                    item.image,
-                    item.description,
-                    item.price,
-                    item.rating
-                  )
-                }
-                src={item.image}
-                alt="product"
-              />
-              <h3>{item.name}</h3>
-              <ProductModal
-                modalIsOpen={modalIsOpen}
-                product={clickedProduct}
-                closeModal={closeModal}
-              />
-              <div className="rating-stars">
-                <p>
-                  {stars.map((star, i) => {
-                    console.log(Math.ceil(item.rating));
-                    return (
-                      <FaStar
-                        key={i}
-                        className={ratingColors(Math.ceil(item.rating))}
-                      />
-                    );
-                  })}
-                </p>
-              </div>
+    <div className="main-container">
 
-              <div className="product-footer">
-              <div className="product-buttons">
-              <p>
-                <button onClick={() => addWishList(item)}>
-                  <FontAwesomeIcon className="wish-btn" icon={faHeart} />
-                </button>
-                <button onClick={() => addToCart(item)}>
-                  <FontAwesomeIcon  className="add-cart-btn" icon={faCartPlus} />
-                </button>
-              </p>
-              </div>
-              <div className="product-price">
-              <p>${item.price}</p>  
-              </div>
-
-              </div>
-
-            </div>
-          );
-        })}
+      <div className="title-container">
+        <p>Products</p>
       </div>
-      <PageButtons
-        setCurrentPage={setCurrentPage}
-        currentPage={currentPage}
-        pagesArr={pagesArr}
-      />
-    </>
+
+      <div className="product-container">
+
+        <div className="aside-container">
+          <div className="aside-genre">
+            <h2>Genre</h2>
+            <label htmlFor="male">
+              Male
+              <input type="checkbox" name="male" />
+            </label>
+            <label htmlFor="female">
+              Female
+              <input type="checkbox" name="female" />
+            </label>
+          </div>
+          <div className="price-input">
+          <h2>Price</h2>
+            <label htmlFor="max-price">
+              Max <input placeholder="ex: 200" type="text" name="price" />
+            </label>
+            <label htmlFor="min-price">
+              Min  <input placeholder="ex: 30" type="text" name="price" />
+            </label>
+          </div>
+        </div>
+
+        <div className="product-wrapper">
+          {showItens.map((item) => {
+            return (
+              <div key={item.id} className="product">
+                <img
+                  onClick={() =>
+                    openModal(
+                      item.name,
+                      item.image,
+                      item.description,
+                      item.price,
+                      item.rating
+                    )
+                  }
+                  src={item.image}
+                  alt="product"
+                />
+                <h3>{item.name}</h3>
+                <ProductModal
+                  modalIsOpen={modalIsOpen}
+                  product={clickedProduct}
+                  closeModal={closeModal}
+                />
+                <div className="rating-stars">
+                  <p>
+                    {stars.map((star, i) => {
+                      console.log(Math.ceil(item.rating));
+                      return (
+                        <FaStar
+                          key={i}
+                          className={ratingColors(Math.ceil(item.rating))}
+                        />
+                      );
+                    })}
+                  </p>
+                </div>
+
+                <div className="product-footer">
+                  <div className="product-buttons">
+                    <p>
+                      <button onClick={() => addWishList(item)}>
+                        <FontAwesomeIcon className="wish-btn" icon={faHeart} />
+                      </button>
+                      <button onClick={() => addToCart(item)}>
+                        <FontAwesomeIcon
+                          className="add-cart-btn"
+                          icon={faCartPlus}
+                        />
+                      </button>
+                    </p>
+                  </div>
+                  <div className="product-price">
+                    <p>${item.price}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
   );
 };
 
