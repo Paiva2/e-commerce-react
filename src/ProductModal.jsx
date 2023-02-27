@@ -13,7 +13,7 @@ const ProductModal = ({ modalIsOpen, closeModal, product }) => {
     >
       <img src={product[1]} alt="Product image" />
       <h2>{product[0]}</h2>
-      <p><b>Description:</b> {product[2]}</p>
+    <div className="description-modal"><p><b>Description:</b> {product[2]}</p></div>
       <p><b>Price:</b> <span className="price-span">${product[3]}</span></p>
       <button onClick={closeModal}>Close <MdClose className="close-icon" /></button>
     </Modal>

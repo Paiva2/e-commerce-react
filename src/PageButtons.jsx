@@ -38,9 +38,7 @@ const PageButtons = ({
             return (
               <button
                 onClick={() => setCurrentPage(index)}
-                className={
-                  currentPage + 1 ? "inative-page-btn" : "inative-page-btn"
-                }
+                className="inactive-page-btn"
                 key={index}
                 value={currentPage}
               >

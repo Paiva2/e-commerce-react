@@ -351,15 +351,15 @@ footer {
   flex-direction: column;
   align-items: center;
   width: 90%;
-  max-width: 540px;
-  height: 670px;
+  max-width: 500px;
+  height: 650px;
   overflow: hidden;
   background-color: #fff;
   border-radius: 20px;
 }
 
 .modal-content h2 {
-  font-size: 35px;
+  font-size: 30px;
   color: #464646;
   border-bottom: 2px solid rgb(172, 166, 166);
   width: 400px;
@@ -367,7 +367,7 @@ footer {
 }
 
 .modal-content p{
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .price-span{
@@ -441,26 +441,26 @@ footer {
   margin: 5px;
 }
 
-.inative-page-btn{
-  background-color: #81bed6;
-  box-shadow: 3px 4px 7px -3px rgba(82, 80, 80, 0.75);
+.inactive-page-btn{
+  color: black;
 }
 
 .active-page-btn{
   background-color: #43a1c7;
   box-shadow: 3px 4px 7px -3px rgba(82, 80, 80, 0.75);
+  color: white;
 }
 
-.active-page-btn, .inative-page-btn{
-  color: white;
+.active-page-btn, .inactive-page-btn{
   height: 35px;
   font-size: 18px;  
   width: 35px;
   transition: 0.4s all;
 }
 
-.inative-page-btn:hover{
+.inactive-page-btn:hover{
   background-color: #43a1c7;
+  box-shadow: 3px 4px 7px -3px rgba(82, 80, 80, 0.75);
   transition: 0.4s all;
 }
 

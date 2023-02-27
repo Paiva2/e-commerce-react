@@ -1,0 +1,211 @@
+{
+    "products": [
+      {
+        "id": "1",
+        "name": "Floral Women's Blouse",
+        "description": "Cotton blouse with floral print",
+        "price": 49.99,
+        "image": "https://i.postimg.cc/Dzfpb3HW/floral-blouse.jpg",
+        "rating": 4.5,
+        "quantity": 1
+      },
+      {
+        "id": "2",
+        "name": "Men's T-Shirt",
+        "description": "Classic black t-shirt with white logo",
+        "price": 29.99,
+        "image": "https://i.postimg.cc/Jz5dnz6V/men-t-shirt.jpg",
+        "rating": 3,
+        "quantity": 1
+      },
+      {
+        "id": "3",
+        "name": "Women's Jeans",
+        "description": "Skinny jeans",
+        "price": 69.99,
+        "image": "https://i.postimg.cc/HWSfPfz0/Women-s-Jeans.jpg",
+        "rating": 4.7,
+        "quantity": 1
+      },
+      {
+        "id": "4",
+        "name": "Men's Hoodie",
+        "description": "Soft and comfortable hoodie with drawstring",
+        "price": 79.99,
+        "image": "https://i.postimg.cc/LXwx7YXf/men-hoodie.jpg",
+        "rating": 4.1,
+        "quantity": 1
+      },
+      {
+        "id": "5",
+        "name": "Women's Cardigan",
+        "description": "Knit cardigan with button closure",
+        "price": 59.99,
+        "image": "https://i.postimg.cc/vZwXPzJL/Women-s-Cardigan.jpg",
+        "rating": 4.6,
+        "quantity": 1
+      },
+      {
+        "id": "6",
+        "name": "Men's Polo Shirt",
+        "description": "Classic polo shirt with logo",
+        "price": 39.99,
+        "image": "https://i.postimg.cc/2ym8cgxN/Men-s-Polo-Shirt.jpg",
+        "rating": 4,
+        "quantity": 1
+      },
+      {
+        "id": "7",
+        "name": "Women's Denim Jacket",
+        "description": "A-line denim Jacket with button closure",
+        "price": 49.99,
+        "image": "https://i.postimg.cc/pTKLBPzB/Women-s-Denim.jpg",
+        "rating": 4.3,
+        "quantity": 1
+      },
+      {
+        "id": "8",
+        "name": "Men's Chinos",
+        "description": "Slim-fit chinos in khaki",
+        "price": 59.99,
+        "image": "https://i.postimg.cc/g0XJnV0Q/Men-s-Chinos.jpg",
+        "rating": 3,
+        "quantity": 1
+      },
+      {
+        "id": "9",
+        "name": "Women's Leather Jacket",
+        "description": "Fitted leather jacket with zipper",
+        "price": 129.99,
+        "image": "https://i.postimg.cc/SNSxWFsW/Women-s-Leather-Jacket.png",
+        "rating": 4.8,
+        "quantity": 1
+      },
+      {
+        "id": "10",
+        "name": "Men's Bomber Jacket",
+        "description": "Lightweight bomber jacket in navy blue",
+        "price": 89.99,
+        "image": "https://i.postimg.cc/CM92rtBt/Men-s-Bomber-Jacket.jpg",
+        "rating": 4.4,
+        "quantity": 1
+      },
+      {
+        "id": "11",
+        "name": "Women's Midi Dress",
+        "description": "Sleeveless midi dress with floral print",
+        "price": 79.99,
+        "image": "https://i.postimg.cc/wTJGCVDB/Women-s-Midi-Dress.jpg",
+        "rating": 4.5
+      },
+      {
+        "id": "12",
+        "name": "Men's Sweater",
+        "description": "Cable knit sweater in beige",
+        "price": 69.99,
+        "image": "https://i.postimg.cc/sg0xj635/Men-s-Sweater.jpg",
+        "rating": 3,
+        "quantity": 1
+      },
+      {
+        "id": "13",
+        "name": "Women's Blazer",
+        "description": "Tailored blazer in black",
+        "price": 99.99,
+        "image": "https://i.postimg.cc/25TFpqHy/Women-s-Blazer.jpg",
+        "rating": 4.7,
+        "quantity": 1
+      },
+      {
+        "id": "14",
+        "name": "Men's Dress Shirt",
+        "description": "Crisp white dress shirt with French cuffs",
+        "price": 79.99,
+        "image": "https://i.postimg.cc/Wp64Fb2N/Men-s-Dress-Shirt.jpg",
+        "rating": 4.1,
+        "quantity": 1
+      },
+      {
+        "id": "15",
+        "name": "Women's Wide-Leg Pants",
+        "description": "Flowy pants with high waist and wide legs",
+        "price": 89.99,
+        "image": "https://i.postimg.cc/wxr2Tm9s/Women-s-Wide-Leg-Pants.jpg",
+        "rating": 4.6,
+        "quantity": 1
+      },
+      {
+        "id": "16",
+        "name": "Men's Jogger Pants",
+        "description": "Comfortable jogger pants with drawstring waist",
+        "price": 59.99,
+        "image": "https://i.postimg.cc/7YTVCZLt/Men-s-Jogger-Pants.jpg",
+        "rating": 4,
+        "quantity": 1
+      },
+      {
+        "id": "17",
+        "name": "Women's Tank Top",
+        "description": "Sleeveless tank top with lace detail",
+        "price": 29.99,
+        "image": "https://i.postimg.cc/Nj8DZXYh/Women-s-Tank-Top.jpg",
+        "rating": 4.3,
+        "quantity": 1
+      },
+      {
+        "id": "18",
+        "name": "Men's Leather Belt",
+        "description": "Brown leather belt with silver buckle",
+        "price": 39.99,
+        "image": "https://i.postimg.cc/zGCFj2Kn/Men-s-Leather-Belt.jpg",
+        "rating": 2,
+        "quantity": 1
+      },
+      {
+        "id": "19",
+        "name": "Men's Denim Jacket",
+        "description": "Classic denim jacket with button closure",
+        "price": 89.99,
+        "image": "https://i.postimg.cc/Vv2W73KF/Men-s-Denim-Jacket.jpg",
+        "rating": 4.4,
+        "quantity": 1
+      },
+      {
+        "id": "20",
+        "name": "Women's Trench Coat",
+        "description": "Classic beige trench coat with belt",
+        "price": "149.99",
+        "image": "https://i.postimg.cc/NMM8QgV4/Women-s-Trench-Coat.jpg",
+        "rating": 4.5,
+        "quantity": 1
+      }
+    ],
+    "cart": [
+      {
+        "id": "1",
+        "name": "Floral Women's Blouse",
+        "description": "Cotton blouse with floral print",
+        "price": 49.99,
+        "image": "https://i.postimg.cc/Dzfpb3HW/floral-blouse.jpg",
+        "rating": 4.5,
+        "quantity": 1
+      }
+    ],
+    "wishlist": [
+      {
+        "id": "1",
+        "name": "Floral Women's Blouse",
+        "description": "Cotton blouse with floral print",
+        "price": 49.99,
+        "image": "https://i.postimg.cc/Dzfpb3HW/floral-blouse.jpg",
+        "rating": 4.5,
+        "quantity": 1
+      }
+    ]
+  }
+  
+  
+  
+  
+  
+  
