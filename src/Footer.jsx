@@ -31,19 +31,19 @@ const Footer = () => {
           <h3>Social medias</h3>
           <div className="infos-wrapper">
             <p>
-              <SlSocialTwitter />
+              <SlSocialTwitter className="twitter" />
             </p>
             <p>
-              <SlSocialInstagram />
+              <SlSocialInstagram className="instagram" />
             </p>
             <p>
-              <SlSocialGoogle />
+              <SlSocialGoogle className="google" />
             </p>
             <p>
-              <SlSocialFacebook />
+              <SlSocialFacebook className="facebook" />
             </p>
             <p>
-              <SlSocialYoutube />
+              <SlSocialYoutube className="youtube" />
             </p>
             <p>
               <SlSocialGithub />
@@ -75,7 +75,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div>
+        <div className="terms">
           <h4>Terms of Use</h4>
           <h4>Privacy</h4>
           <h4>Locations</h4>

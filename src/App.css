@@ -152,7 +152,7 @@ a:-webkit-any-link {
   box-shadow: 3px 4px 7px -3px rgba(209, 204, 204, 0.75);
   height: 445px;
   background-color: #fff;
-  margin: 10px;
+  margin: 12px;
   overflow: hidden;
   font-weight: bold;
   border-radius: 20px;
@@ -366,6 +366,15 @@ footer {
   text-align: center;
 }
 
+.terms{
+  cursor: pointer;
+}
+
+.terms h4:hover{
+  text-decoration: underline;
+}
+
+
 .modal-content p{
   font-size: 16px;
 }
@@ -470,4 +479,24 @@ footer {
   width: 30px;
   color: black;
   height: 30px;
+}
+
+.twitter:hover{
+  color: rgb(9, 132, 247);
+}
+
+.instagram:hover{
+  color: #E4405F;
+}
+
+.google:hover{
+  color: #DB4437
+}
+
+.facebook:hover{
+  color: #3b5998;
+}
+
+.youtube:hover{
+  color: #FF0000;
 }
