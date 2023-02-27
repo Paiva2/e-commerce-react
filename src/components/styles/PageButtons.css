@@ -1,0 +1,48 @@
+.page-btn-container {
+  margin-bottom: 10px;
+}
+
+.page-btn-container button {
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 5px;
+}
+.arrow-icon {
+  font-size: 15px;
+  border: none;
+  width: 30px;
+  color: black;
+  height: 30px;
+}
+.inactive-page-btn {
+  color: black;
+}
+
+.active-page-btn {
+  background-color: #43a1c7;
+  box-shadow: 3px 4px 7px -3px rgba(82, 80, 80, 0.75);
+  color: white;
+}
+
+.active-page-btn,
+.inactive-page-btn {
+  height: 35px;
+  font-size: 18px;
+  width: 35px;
+  transition: 0.4s all;
+}
+
+.inactive-page-btn:hover {
+  background-color: #43a1c7;
+  box-shadow: 3px 4px 7px -3px rgba(82, 80, 80, 0.75);
+  transition: 0.4s all;
+}
+
+.arrow-icon {
+  font-size: 15px;
+  border: none;
+  width: 30px;
+  color: black;
+  height: 30px;
+}

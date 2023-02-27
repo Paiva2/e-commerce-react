@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import PlaceHolder from "./PlaceHolder";
+import "./styles/WishList.css";
 
 const WishList = () => {
   const [wishList, setWishList] = useState(undefined);
@@ -30,9 +31,9 @@ const WishList = () => {
     return (
       <div className="main-container">
         <div className="wish-products">
-          {wishList.map((product) => {
+          {wishList.map((product, i) => {
             return (
-              <div className="wish-list">
+              <div key={i} className="wish-list">
                 <div>
                   <p>{product.name}</p>
                   <img src={product.image} alt="product" />

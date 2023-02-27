@@ -6,6 +6,7 @@ import PageButtons from "./PageButtons";
 import ProductModal from "./ProductModal";
 import { FaStar } from "react-icons/fa";
 import Modal from "react-modal";
+import "./styles/Products.css";
 Modal.setAppElement("#root");
 
 const Products = ({
@@ -40,13 +41,11 @@ const Products = ({
 
   return (
     <div className="main-container">
-
       <div className="title-container">
         <p>Products</p>
       </div>
 
       <div className="product-container">
-
         <div className="aside-container">
           <div className="aside-genre">
             <h2>Genre</h2>
@@ -60,12 +59,12 @@ const Products = ({
             </label>
           </div>
           <div className="price-wrapper">
-          <h2>Price</h2>
+            <h2>Price</h2>
             <label htmlFor="max-price">
               Max <input placeholder="ex: 200" type="text" name="price" />
             </label>
             <label htmlFor="min-price">
-              Min  <input placeholder="ex: 30" type="text" name="price" />
+              Min <input placeholder="ex: 30" type="text" name="price" />
             </label>
           </div>
         </div>

@@ -3,12 +3,12 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Swal from "sweetalert2";
 import "./App.css";
 import axios from "axios";
-import Products from "./Products";
-import NotFound from "./NotFound";
-import WishList from "./WishList";
-import Cart from "./Cart";
-import Header from "./Header";
-import Footer from "./Footer";
+import Products from "./components/Products";
+import NotFound from "./components/NotFound";
+import WishList from "./components/WishList";
+import Cart from "./components/Cart";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   const [data, setData] = useState();

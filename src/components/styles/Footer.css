@@ -1,0 +1,58 @@
+footer {
+  height: 120px;
+  border-top: 2px solid rgb(204, 200, 200);
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 13px;
+  min-width: 100%;
+}
+.infos {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+}
+.infos-wrapper {
+  font-size: 22px;
+  margin: 5px;
+  cursor: pointer;
+  display: flex;
+}
+
+.infos-wrapper p {
+  margin: 4px;
+}
+.twitter:hover {
+  color: rgb(9, 132, 247);
+}
+
+.instagram:hover {
+  color: #e4405f;
+}
+
+.google:hover {
+  color: #db4437;
+}
+
+.facebook:hover {
+  color: #3b5998;
+}
+
+.youtube:hover {
+  color: #ff0000;
+}
+.terms {
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.terms h4:hover {
+  text-decoration: underline;
+}

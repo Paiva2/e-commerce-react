@@ -1,0 +1,74 @@
+.header {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  width: auto;
+  padding: 10px;
+  justify-content: space-between;
+}
+.header section {
+  text-decoration: none;
+  color: rgb(129, 123, 123);
+  font-size: 18px;
+  margin-left: 10px;
+}
+.header span {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+.search-input {
+  display: flex;
+  align-items: center;
+  width: 360px;
+  padding-left: 15px;
+  border-radius: 10px;
+  background-color: #fff;
+  height: 40px;
+  box-shadow: 3px 4px 7px -3px rgba(209, 204, 204, 0.75);
+}
+
+.search-input input {
+  display: flex;
+  align-items: center;
+  width: 360px;
+  border: none;
+  font-size: 18px;
+  padding-left: 10px;
+  border-radius: 20px;
+  background-color: #fff;
+  height: 40px;
+}
+
+.icon-search {
+  color: rgb(88, 84, 84);
+  font-size: 18px;
+}
+.header-buttons {
+  display: flex;
+  margin-right: 10px;
+}
+
+.header-buttons button {
+  margin: 5px;
+  font-size: 26px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: rgb(75, 74, 74);
+  transition: all 0.4s;
+}
+.wish-list img {
+  width: 240px;
+  height: 260px;
+}
+.wish-list-header:hover,
+.wish-btn:hover {
+  color: rgb(255, 0, 0);
+  transition: all 0.4s;
+}
+
+.cart-header:hover {
+  color: rgb(2, 69, 253);
+  transition: all 0.4s;
+}

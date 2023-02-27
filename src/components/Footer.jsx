@@ -15,15 +15,14 @@ import {
 } from "react-icons/ri";
 import { FaCcApplePay } from "react-icons/fa";
 import { SiGooglepay } from "react-icons/si";
+import './styles/Footer.css'
 
 const Footer = () => {
   return (
     <footer>
       <div className="footer-text">
         <p>
-          This eCommerce website built with React provides an intuitive and
-          responsive user interface, allowing customers to browse and purchase
-          products. 2023®
+          eCommerce concept website made with React.js by João Vitor Paiva, 2023.
         </p>
       </div>
       <div className="infos">

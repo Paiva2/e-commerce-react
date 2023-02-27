@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import PlaceHolder from "./PlaceHolder";
 import axios from "axios";
-import "./App.css";
+import './styles/Cart.css'
 
 const Cart = () => {
   const [cart, setCart] = useState(undefined);
