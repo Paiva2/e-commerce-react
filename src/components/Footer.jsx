@@ -19,7 +19,7 @@ import './styles/Footer.css'
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="footer">
       <div className="footer-text">
         <p>
           eCommerce concept website made with React.js by João Vitor Paiva, 2023.

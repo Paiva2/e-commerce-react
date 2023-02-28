@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   height: 80px;
-  width: auto;
+  width: 100%;
   padding: 10px;
   justify-content: space-between;
 }
@@ -71,4 +71,20 @@
 .cart-header:hover {
   color: rgb(2, 69, 253);
   transition: all 0.4s;
+}
+
+@media (max-width: 450px) {
+  .search-input,
+  .search-input input {
+    width: 250px;
+  }
+
+  .search-input {
+    margin-top: 10px;
+  }
+  .header {
+    width: 300px;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
 }

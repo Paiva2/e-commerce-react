@@ -65,7 +65,8 @@ const Products = ({
   
   const resultProducts = !minPriceVal && !maxPriceVal ? showItensCopy : priceFilterResults();
   return (
-    <div className="main-container">
+
+      <>
       <div className="title-container">
         <p>Products</p>
       </div>
@@ -158,7 +159,7 @@ const Products = ({
         pagesArr={pagesArr}
         initialPage={initialPage}
       />
-    </div>
+      </>
   );
 };
 
