@@ -115,7 +115,7 @@ function App() {
               />
             }
           />
-          <Route path={"/wish-list"} element={<WishList />} />
+          <Route path={"/wish-list"} element={<WishList addToCart={addToCart} />} />
           <Route path={"/cart"} element={<Cart />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

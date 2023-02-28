@@ -180,6 +180,16 @@
       "quantity": 1
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "id": "1",
+      "name": "Floral Women's Blouse",
+      "description": "Cotton blouse with floral print",
+      "price": 49.99,
+      "image": "https://i.postimg.cc/yWqRwhxg/Floral-Women-s-Blouse.jpg",
+      "rating": 4.5,
+      "quantity": 1
+    }
+  ],
   "wishlist": []
 }

@@ -1,11 +1,13 @@
 import { React, useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { AiOutlineDelete } from "react-icons/ai";
+import { MdOutlineAddShoppingCart } from "react-icons/md";
 import axios from "axios";
 import PlaceHolder from "./PlaceHolder";
 import "./styles/WishList.css";
 
-const WishList = () => {
+const WishList = ({ addToCart }) => {
   const [wishList, setWishList] = useState(undefined);
 
   useEffect(() => {
@@ -25,31 +27,38 @@ const WishList = () => {
   };
   if (wishList) {
     if (wishList.length === 0)
-      return (
-        <PlaceHolder classN="main-container" text={"Empty Wish List..."} />
-      );
+      return <PlaceHolder text={"Empty Wish List..."} />;
     return (
-      <div className="main-container">
-        <div className="wish-products">
-          {wishList.map((product, i) => {
-            return (
-              <div key={i} className="wish-list">
-                <div>
-                  <p>{product.name}</p>
-                  <img src={product.image} alt="product" />
+      <div className="wish-container">
+        {wishList.map((product, i) => {
+          return (
+            <div key={i} className="wish-product">
+              <div className="wish-product-details">
+                <img src={product.image} alt="product" />
+                <div className="item-description">
+                  <h3>{product.name}</h3>
+                  <p>
+                    <b>Rating:</b> {product.rating}
+                  </p>
+                  <p>
+                    <b>Price:</b>{" "}
+                    <span className="price-text">${product.price}</span>
+                  </p>
+                  <MdOutlineAddShoppingCart
+                    className="add-to-cart-btn"
+                    onClick={() => {
+                      addToCart(product), delWishItem(product.id);
+                    }}
+                  />
+                  <AiOutlineDelete
+                    className="del-btn"
+                    onClick={() => delWishItem(product.id)}
+                  />
                 </div>
-                <p>{product.rating}</p>
-                <p>${product.price}</p>
-                <button onClick={() => addToCart({})}>
-                  <FontAwesomeIcon icon={faCartPlus} />
-                </button>
-                <button onClick={() => delWishItem(product.id)}>
-                  <FontAwesomeIcon icon={faTrash} />
-                </button>
               </div>
-            );
-          })}
-        </div>
+            </div>
+          );
+        })}
       </div>
     );
   }

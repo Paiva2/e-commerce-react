@@ -24,16 +24,16 @@ const Products = ({
   const [clickedProduct, setclickedProduct] = useState([]);
   const [maxPriceVal, setMaxPriceVal] = useState(false)
   const [minPriceVal, setMinPriceVal] = useState(false)
+  const stars = [1, 2, 3, 4, 5];
 
-  function openModal(...productClicked) {
+  const openModal = (...productClicked) => {
     setIsOpen(true);
     setclickedProduct(productClicked);
   }
 
-  function closeModal() {
+  const closeModal = () => {
     setIsOpen(false);
   }
-  const stars = [1, 2, 3, 4, 5];
 
   const ratingColors = (rate) => {
     if (rate === 1) return "one-star";
@@ -42,28 +42,28 @@ const Products = ({
     if (rate === 4) return "four-star";
     if (rate === 5) return "five-star";
   };
-
+  
   const bothPricesFiltered = data.filter((item) => {
     if (item.price <= maxPriceVal && item.price >= minPriceVal) return item;
   });
-
+  
   const onePriceFilter = data.filter((item) => {
     if (item.price <= maxPriceVal || item.price >= minPriceVal) return item;
   });
-
-  const filterResults = () => {
+  
+  
+  const priceFilterResults = () => {
     const result =
-      bothPricesFiltered.length >= 1
-        ? (showItens = bothPricesFiltered)
-        : onePriceFilter.length >= 1
-        ? (showItens = onePriceFilter)
-        : undefined;
-
+    bothPricesFiltered.length >= 1
+    ? (showItens = bothPricesFiltered)
+    : onePriceFilter.length >= 1
+    ? (showItens = onePriceFilter)
+    : undefined;
+    
     return result;
   };
-
-  const resultProducts = !minPriceVal && !maxPriceVal ? showItensCopy : filterResults();
-
+  
+  const resultProducts = !minPriceVal && !maxPriceVal ? showItensCopy : priceFilterResults();
   return (
     <div className="main-container">
       <div className="title-container">
