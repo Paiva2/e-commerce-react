@@ -3,6 +3,7 @@ import { AiOutlineDelete, AiOutlineHeart } from "react-icons/ai";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import axios from "axios";
 import PlaceHolder from "./PlaceHolder";
+import {Helmet} from "react-helmet";
 import "./styles/WishList.css";
 
 const WishList = ({ addToCart }) => {
@@ -25,9 +26,14 @@ const WishList = ({ addToCart }) => {
   };
   if (wishList) {
     if (wishList.length === 0)
-      return <PlaceHolder Icon={AiOutlineHeart} text={"Empty Wish List..."} />;
+      return <PlaceHolder Icon={AiOutlineHeart} title={'Wish List'} text={"Empty Wish List..."} />;
     return (
       <div className="wish-container">
+        <Helmet>
+          <meta charSet="utf-8" />
+          <html lang="en-US" />
+          <title>Wish List</title>
+        </Helmet>
         {wishList.map((product, i) => {
           return (
             <div key={i} className="wish-product">

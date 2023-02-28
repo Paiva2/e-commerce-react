@@ -5,6 +5,7 @@ import { AiOutlineHeart } from "react-icons/ai";
 import PageButtons from "./PageButtons";
 import ProductModal from "./ProductModal";
 import { FaStar } from "react-icons/fa";
+import {Helmet} from "react-helmet";
 import Modal from "react-modal";
 import "./styles/Products.css";
 Modal.setAppElement("#root");
@@ -67,6 +68,11 @@ const Products = ({
   return (
 
       <>
+       <Helmet>
+          <meta charSet="utf-8" />
+          <html lang="en-US" />
+          <title>Products</title>
+        </Helmet>
       <div className="title-container">
         <p>Products</p>
       </div>

@@ -1,12 +1,20 @@
 import React from "react";
 import "./styles/PlaceHolder.css";
+import {Helmet} from "react-helmet";
 
-const PlaceHolder = ({ text, Icon }) => {
+const PlaceHolder = ({ text, Icon, title }) => {
   return (
     <div className="place-holder-container">
-        <div><Icon className="icon" /></div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <html lang="en-US" />
+        <title>{title}</title>
+      </Helmet>
+      <div>
+        <Icon className="icon" />
+      </div>
       <div className="place-holder-text">
-      <p>{text}</p>
+        <p>{text}</p>
       </div>
     </div>
   );
