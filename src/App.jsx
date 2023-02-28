@@ -40,7 +40,7 @@ function App() {
     return object;
   };
 
-  const actionAlert = (text) => {
+  const actionAlert = (text, icon) => {
     const Toast = Swal.mixin({
       toast: true,
       position: "bottom-end",
@@ -54,7 +54,7 @@ function App() {
     });
 
     Toast.fire({
-      icon: "success",
+      icon: icon,
       title: text,
     });
 
@@ -62,17 +62,20 @@ function App() {
   };
 
   const addWishList = (product) => {
-    axios
-      .post("http://localhost:3000/wishlist/", objectBody(product))
-      .then(() => callApi());
-    actionAlert("Product added to wish list!");
+    axios.post("http://localhost:3000/wishlist/", objectBody(product))
+      .then(() => {callApi(), actionAlert('Added to wish list!', 'success');
+      }).catch(err => {
+        if(err) return actionAlert('This product is already on wish list!', 'error')
+      })
   };
 
   const addToCart = (product) => {
     axios
       .post("http://localhost:3000/cart/", objectBody(product))
-      .then(() => callApi());
-    actionAlert("Product added to cart!");
+      .then(() => {callApi(), actionAlert("Product added to cart!", 'success')})
+      .catch(err => {
+        if(err) return actionAlert('This product is already on cart!', 'error')
+      })
   };
 
   if (data) {
