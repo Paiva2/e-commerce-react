@@ -1,7 +1,7 @@
 import React from "react";
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 
-const NotFound = () => {  
+const NotFound = () => {
   return (
     <>
       <Helmet>
@@ -9,7 +9,7 @@ const NotFound = () => {
         <html lang="en-US" />
         <title>Not Found</title>
       </Helmet>
-      <h1>Not Found 404</h1>
+      <h1>Nothing here...</h1>
     </>
   );
 };

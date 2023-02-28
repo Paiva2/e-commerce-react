@@ -2,7 +2,7 @@ import { React, useEffect, useState } from "react";
 import PlaceHolder from "./PlaceHolder";
 import { BsCartX } from "react-icons/bs";
 import { AiOutlineDelete } from "react-icons/ai";
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 
 import axios from "axios";
 import "./styles/Cart.css";
@@ -61,7 +61,9 @@ const Cart = () => {
 
   if (cart) {
     if (cart.length === 0)
-      return <PlaceHolder Icon={BsCartX} title={'Cart'} text={"Empty cart..."} />;
+      return (
+        <PlaceHolder Icon={BsCartX} title={"Cart"} text={"Empty cart..."} />
+      );
     return (
       <div className="cart-main-container">
         <Helmet>
@@ -138,9 +140,9 @@ const Cart = () => {
           <div className="resume-infos">
             <div className="shipping-info">
               <h3>Shipping</h3>
-              <input type="text" />
+              <input placeholder="Insert your zipccode" type="text" />
               <h3>Promo code</h3>
-              <input type="text" />
+              <input placeholder="Have a promo code?" type="text" />
               <button className="confirm-shipping">Confirm</button>
             </div>
 

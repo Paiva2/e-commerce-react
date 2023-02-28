@@ -62,20 +62,27 @@ function App() {
   };
 
   const addWishList = (product) => {
-    axios.post("http://localhost:3000/wishlist/", objectBody(product))
-      .then(() => {callApi(), actionAlert('Added to wish list!', 'success');
-      }).catch(err => {
-        if(err) return actionAlert('This product is already on wish list!', 'error')
+    axios
+      .post("http://localhost:3000/wishlist/", objectBody(product))
+      .then(() => {
+        callApi(), actionAlert("Added to wish list!", "success");
       })
+      .catch((err) => {
+        if (err)
+          return actionAlert("This product is already on wish list!", "error");
+      });
   };
 
   const addToCart = (product) => {
     axios
       .post("http://localhost:3000/cart/", objectBody(product))
-      .then(() => {callApi(), actionAlert("Product added to cart!", 'success')})
-      .catch(err => {
-        if(err) return actionAlert('This product is already on cart!', 'error')
+      .then(() => {
+        callApi(), actionAlert("Product added to cart!", "success");
       })
+      .catch((err) => {
+        if (err)
+          return actionAlert("This product is already on cart!", "error");
+      });
   };
 
   if (data) {
@@ -93,7 +100,7 @@ function App() {
     );
 
     let showItens = filteredProducts.slice(initialPage, finalPage);
-  
+
     return (
       <BrowserRouter>
         <Header
@@ -118,7 +125,10 @@ function App() {
               />
             }
           />
-          <Route path={"/wish-list"} element={<WishList addToCart={addToCart} />} />
+          <Route
+            path={"/wish-list"}
+            element={<WishList addToCart={addToCart} />}
+          />
           <Route path={"/cart"} element={<Cart />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

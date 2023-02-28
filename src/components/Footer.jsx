@@ -15,14 +15,15 @@ import {
 } from "react-icons/ri";
 import { FaCcApplePay } from "react-icons/fa";
 import { SiGooglepay } from "react-icons/si";
-import './styles/Footer.css'
+import "./styles/Footer.css";
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer>
       <div className="footer-text">
         <p>
-          eCommerce concept website made with React.js by João Vitor Paiva, 2023.
+          eCommerce concept website made with React.js by João Vitor Paiva,
+          2023.
         </p>
       </div>
       <div className="infos">

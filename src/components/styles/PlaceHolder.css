@@ -3,14 +3,11 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    margin: 0 auto;
-    margin-bottom: 5px;
     height: 680px;
     user-select: none;
 }
 
 .place-holder-text{
-    height: 200px;
     font-size: 40px;
     color: rgb(80, 79, 79);
 }

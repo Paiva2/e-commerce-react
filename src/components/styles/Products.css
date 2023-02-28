@@ -1,3 +1,8 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .title-container {
   width: 830px;
   font-size: 35px;
@@ -8,7 +13,6 @@
 .product-container {
   display: flex;
   width: 1400px;
-  margin: 0 auto;
 }
 .aside-container {
   width: 240px;
@@ -54,7 +58,6 @@
 .product-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 0fr);
-  margin-bottom: 10px;
 }
 .product {
   display: flex;
@@ -87,29 +90,17 @@
   color: rgb(177, 171, 171);
 }
 
-.one-star:nth-child(-n + 1) {
-  color: rgb(238, 215, 11);
-}
-
-.two-star:nth-child(-n + 2) {
-  color: rgb(238, 215, 11);
-}
-
-.three-star:nth-child(-n + 3) {
-  color: rgb(238, 215, 11);
-}
-
-.four-star:nth-child(-n + 4) {
-  color: rgb(238, 215, 11);
-}
-
+.one-star:nth-child(-n + 1),
+.two-star:nth-child(-n + 2),
+.three-star:nth-child(-n + 3),
+.four-star:nth-child(-n + 4),
 .five-star:nth-child(-n + 5) {
   color: rgb(238, 215, 11);
 }
 
 .product-footer {
   display: flex;
-  border-top: 1px solid rgb(202, 187, 187);
+  border-top: 1px solid rgb(202, 198, 198);
   justify-content: space-between;
   align-items: center;
   width: 300px;
@@ -119,18 +110,16 @@
   background-color: transparent;
   margin: 5px;
   cursor: pointer;
-  border-radius: 5px;
-  padding: 2px;
   border: none;
 }
-.wish-btn {
+
+.wish-btn,
+.add-cart-btn {
   transition: all 0.4s;
 }
+
 .wish-btn:hover {
   color: rgb(255, 0, 0);
-  transition: all 0.4s;
-}
-.add-cart-btn {
   transition: all 0.4s;
 }
 
@@ -144,61 +133,35 @@
 }
 
 @media (max-width: 450px) {
-  .product {
-    width: 100%;
-    height: 450px;
-    margin: 3px;
+  .main-container {
+    background-color: red;
+    width: 680px;
   }
 
-  .product img{
-    width: 100%;
+  .product {
+    font-size: px;
+    width: 280px;
   }
 
   .product-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0;
-    width: 100%;
+    margin: 0 auto;
+    width: 340px;
   }
 
   .aside-container {
-    display: flex;
-    align-items: center;
-    width: 250px;
-    height: 180px;
-  }
-
-  .price-wrapper {
-    font-size: 13px;
-    width: 100px;
-  }
-
-  .price-wrapper input {
-    width: 80px;
-    font-size: 18px;
-    height: 35px;
-  }
-
-  .aside-genre {
-    width: 150px;
-    margin: 5%;
-    height: 147px;
-    font-size: 13px;
+    width: 350px;
+    height: 200px;
   }
 
   .product-wrapper {
-    display: flex;
-    flex-direction: column;
-    margin: 0px;
-  }
-
-  .title-container {
-    display: none;
+    display: grid;
+    grid-template-columns: repeat(2, 0fr);
   }
 
   .product-footer {
-    width: 300px;
-    font-size: 10px;
+    width: 250px;
   }
 }
