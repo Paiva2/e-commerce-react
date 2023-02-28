@@ -1,7 +1,5 @@
 import { React, useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
-import { AiOutlineDelete } from "react-icons/ai";
+import { AiOutlineDelete, AiOutlineHeart } from "react-icons/ai";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import axios from "axios";
 import PlaceHolder from "./PlaceHolder";
@@ -27,7 +25,7 @@ const WishList = ({ addToCart }) => {
   };
   if (wishList) {
     if (wishList.length === 0)
-      return <PlaceHolder text={"Empty Wish List..."} />;
+      return <PlaceHolder Icon={AiOutlineHeart} text={"Empty Wish List..."} />;
     return (
       <div className="wish-container">
         {wishList.map((product, i) => {

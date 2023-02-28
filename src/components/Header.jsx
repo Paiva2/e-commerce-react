@@ -4,7 +4,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { AiOutlineHeart } from "react-icons/ai";
-import './styles/Header.css'
+import "./styles/Header.css";
 
 const Header = ({ searchState }) => {
   const inputRef = useRef();

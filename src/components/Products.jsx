@@ -1,7 +1,7 @@
-import { React, useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { React, useState } from "react";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
-import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
+import { MdOutlineAddShoppingCart } from "react-icons/md";
+import { AiOutlineHeart } from "react-icons/ai";
 import PageButtons from "./PageButtons";
 import ProductModal from "./ProductModal";
 import { FaStar } from "react-icons/fa";
@@ -134,12 +134,11 @@ const Products = ({
                   <div className="product-buttons">
                     <p>
                       <button onClick={() => addWishList(item)}>
-                        <FontAwesomeIcon className="wish-btn" icon={faHeart} />
+                        <AiOutlineHeart className="wish-btn" icon={faHeart} />
                       </button>
                       <button onClick={() => addToCart(item)}>
-                        <FontAwesomeIcon
+                        <MdOutlineAddShoppingCart
                           className="add-cart-btn"
-                          icon={faCartPlus}
                         />
                       </button>
                     </p>
