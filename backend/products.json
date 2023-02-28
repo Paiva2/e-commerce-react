@@ -174,7 +174,7 @@
       "id": "20",
       "name": "Women's Trench Coat",
       "description": "Classic beige trench coat with belt",
-      "price": "149.99",
+      "price": 149.99,
       "image": "https://i.postimg.cc/0Q7Q3ggv/Women-s-Trench-Coat.jpg",
       "rating": 4.5,
       "quantity": 1

@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
@@ -17,9 +17,13 @@ const Products = ({
   currentPage,
   pagesArr,
   initialPage,
+  data,
+  showItensCopy
 }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [clickedProduct, setclickedProduct] = useState([]);
+  const [maxPriceVal, setMaxPriceVal] = useState(false)
+  const [minPriceVal, setMinPriceVal] = useState(false)
 
   function openModal(...productClicked) {
     setIsOpen(true);
@@ -38,6 +42,27 @@ const Products = ({
     if (rate === 4) return "four-star";
     if (rate === 5) return "five-star";
   };
+
+  const bothPricesFiltered = data.filter((item) => {
+    if (item.price <= maxPriceVal && item.price >= minPriceVal) return item;
+  });
+
+  const onePriceFilter = data.filter((item) => {
+    if (item.price <= maxPriceVal || item.price >= minPriceVal) return item;
+  });
+
+  const filterResults = () => {
+    const result =
+      bothPricesFiltered.length >= 1
+        ? (showItens = bothPricesFiltered)
+        : onePriceFilter.length >= 1
+        ? (showItens = onePriceFilter)
+        : undefined;
+
+    return result;
+  };
+
+  const resultProducts = !minPriceVal && !maxPriceVal ? showItensCopy : filterResults();
 
   return (
     <div className="main-container">
@@ -61,16 +86,16 @@ const Products = ({
           <div className="price-wrapper">
             <h2>Price</h2>
             <label htmlFor="max-price">
-              Max <input placeholder="ex: 200" type="text" name="price" />
+              Max <input onChange={(e) => setMaxPriceVal(e.target.value)} placeholder="ex: 200" type="text" name="price" />
             </label>
             <label htmlFor="min-price">
-              Min <input placeholder="ex: 30" type="text" name="price" />
+              Min <input onChange={(e) => setMinPriceVal(e.target.value)} placeholder="ex: 30" type="text" name="price" />
             </label>
           </div>
         </div>
 
         <div className="product-wrapper">
-          {showItens.map((item) => {
+          {resultProducts.map((item) => {
             return (
               <div key={item.id} className="product">
                 <img
