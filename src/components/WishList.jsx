@@ -1,13 +1,17 @@
-import { React, useEffect, useState } from "react";
+import { React, useEffect, useState, useContext } from "react";
 import { AiOutlineDelete, AiOutlineHeart } from "react-icons/ai";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import axios from "axios";
 import PlaceHolder from "./PlaceHolder";
 import { Helmet } from "react-helmet";
 import "./styles/WishList.css";
+import { GlobalContext } from '../context/GlobalContext'
+
+
 
 const WishList = ({ addToCart }) => {
   const [wishList, setWishList] = useState(undefined);
+ // const {callApiWishList, delWishItem, wishListData} = useContext(GlobalContext)
 
   useEffect(() => {
     callApi();
@@ -24,6 +28,7 @@ const WishList = ({ addToCart }) => {
       callApi();
     });
   };
+
   if (wishList) {
     if (wishList.length === 0)
       return (

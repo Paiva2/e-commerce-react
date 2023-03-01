@@ -3,7 +3,6 @@ import PlaceHolder from "./PlaceHolder";
 import { BsCartX } from "react-icons/bs";
 import { AiOutlineDelete } from "react-icons/ai";
 import { Helmet } from "react-helmet";
-
 import axios from "axios";
 import "./styles/Cart.css";
 
@@ -17,17 +16,24 @@ const Cart = () => {
   }, []);
 
   const callApi = () => {
-    axios.get("http://localhost:3000/cart").then((resp) => {
-      setCart(resp.data);
-
-      setTotalQuantity(
-        resp.data.map((item) => item.quantity).reduce((acc, item) => acc + item)
-      );
-
-      setTotalPrice(
-        resp.data.map((item) => item.price).reduce((acc, item) => acc + item)
-      );
-    });
+    axios
+      .get("http://localhost:3000/cart")
+      .then((resp) => {
+        setCart(resp.data);
+        if (!resp) return;
+        setTotalQuantity(
+          resp.data
+            .map((item) => item.quantity)
+            .reduce((acc, item) => acc + item)
+        );
+        setTotalPrice(
+          resp.data.map((item) => item.price).reduce((acc, item) => acc + item)
+        );
+      })
+      .catch((error) => {
+        if (error.response) console.warn("Error. Try Again Later.");
+        else if (error.request) console.log(error.request);
+      });
   };
 
   const delCartItem = (id) => {
@@ -74,7 +80,7 @@ const Cart = () => {
         <div className="cart-container">
           {cart.map((product) => {
             return (
-              <div className="cart-product">
+              <div key={product.id} className="cart-product">
                 <div className="product-details">
                   <div className="image-details">
                     <img src={product.image} alt="product" />

@@ -1,13 +1,16 @@
 import { React, useState } from "react";
-import { Helmet } from "react-helmet";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import { AiOutlineHeart } from "react-icons/ai";
 import PageButtons from "./PageButtons";
 import ProductModal from "./ProductModal";
+import { Helmet } from "react-helmet";
 import { FaStar } from "react-icons/fa";
 import Modal from "react-modal";
 import "./styles/Products.css";
+import { GlobalContext } from "../context/GlobalContext";
+import { useContext } from "react";
+import PlaceHolder from "./PlaceHolder";
 Modal.setAppElement("#root");
 
 const Products = ({
@@ -21,6 +24,7 @@ const Products = ({
   data,
   showItensCopy,
 }) => {
+  const { loading } = useContext(GlobalContext);
   const [modalIsOpen, setIsOpen] = useState(false);
   const [clickedProduct, setclickedProduct] = useState([]);
   const [maxPriceVal, setMaxPriceVal] = useState(false);
