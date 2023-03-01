@@ -20,6 +20,3 @@ bash
 - JavaScript, React
 - React Router
 - React Helmet
-
-  <source src="./demo/Demo.mp4" type="video/mp4">
-
