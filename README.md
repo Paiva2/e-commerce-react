@@ -1,5 +1,5 @@
 <h1 align="center">
-    e-commerce concept/React.js &#128197;
+    e-commerce concept/React.js
 </h1>
 
 # Run this app
@@ -21,4 +21,4 @@ bash
 - React Router
 - React Helmet
 
-<img src="./demo/Demo.webm">
+<img src="./demo/Demo.mp4">
