@@ -4,7 +4,7 @@ import App from "./App";
 import { GlobalStorage } from "./context/GlobalContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-    <GlobalStorage>
+  <GlobalStorage>
     <App />
-    </GlobalStorage>
+  </GlobalStorage>
 );

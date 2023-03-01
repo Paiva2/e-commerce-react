@@ -10,7 +10,6 @@ import Modal from "react-modal";
 import "./styles/Products.css";
 import { GlobalContext } from "../context/GlobalContext";
 import { useContext } from "react";
-import PlaceHolder from "./PlaceHolder";
 Modal.setAppElement("#root");
 
 const Products = ({
@@ -24,7 +23,6 @@ const Products = ({
   data,
   showItensCopy,
 }) => {
-  const { loading } = useContext(GlobalContext);
   const [modalIsOpen, setIsOpen] = useState(false);
   const [clickedProduct, setclickedProduct] = useState([]);
   const [maxPriceVal, setMaxPriceVal] = useState(false);

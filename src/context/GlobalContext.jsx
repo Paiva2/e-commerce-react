@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 export const GlobalContext = createContext();
 
 export const GlobalStorage = ({ children }) => {
-  const [data, setData] = useState('');
+  const [data, setData] = useState("");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -17,8 +17,8 @@ export const GlobalStorage = ({ children }) => {
     axios
       .get("http://localhost:3000/products")
       .then((resp) => {
-          setData(resp.data);
-          setLoading(false);
+        setData(resp.data);
+        setLoading(false);
       })
       .catch((error) => {
         if (error.response) console.warn("Error. Try Again Later.");

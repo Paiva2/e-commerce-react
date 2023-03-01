@@ -6,7 +6,6 @@ import { useContext } from "react";
 import PlaceHolder from "./components/PlaceHolder";
 import { MdOutlinePending } from "react-icons/md";
 
-
 function App() {
   const { loading } = useContext(GlobalContext);
   if (loading)
@@ -17,10 +16,7 @@ function App() {
         text={"Loading..."}
       />
     );
-    return (
-      <ProductsContext />    
-    );
-  
+  return <ProductsContext />;
 }
 
 export default App;
