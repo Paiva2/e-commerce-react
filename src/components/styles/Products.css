@@ -17,7 +17,7 @@
 .aside-container {
   width: 240px;
   margin-top: 10px;
-  height: 320px;
+  height: 280px;
   border-radius: 20px;
   align-items: flex-end;
   background-color: #fff;
@@ -65,7 +65,7 @@
   align-items: center;
   width: 350px;
   box-shadow: 3px 4px 7px -3px rgba(209, 204, 204, 0.75);
-  height: 455px;
+  height: 440px;
   background-color: #fff;
   margin: 12px;
   overflow: hidden;
@@ -138,17 +138,12 @@
     width: 680px;
   }
 
-  .product {
-    font-size: px;
-    width: 280px;
-  }
-
   .product-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    width: 340px;
+    width: 330px;
   }
 
   .aside-container {

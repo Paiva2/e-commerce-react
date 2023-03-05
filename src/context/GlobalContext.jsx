@@ -28,7 +28,7 @@ export const GlobalStorage = ({ children }) => {
       });
   };
 
-  const objectBody = (productData) => {
+  const objectBody = (productData) => {                           
     const object = {
       id: productData.id,
       name: productData.name,
