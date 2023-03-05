@@ -6,14 +6,17 @@ import { HiOutlineShoppingBag } from "react-icons/hi";
 import { AiOutlineHeart } from "react-icons/ai";
 import { TiThMenu } from "react-icons/ti";
 import "./styles/Header.css";
+import { GlobalContext } from "../context/GlobalContext";
+import { useContext } from "react";
 
-const Header = ({ searchState }) => {
+const Header = () => {
+  const { setSearchValue } = useContext(GlobalContext);
   const inputRef = useRef();
   const mobileBtn = useRef();
 
   const resetInput = () => {
     inputRef.current.value = "";
-    searchState("");
+    setSearchValue("");
   };
 
   const toggleMenu = () => {
@@ -34,7 +37,7 @@ const Header = ({ searchState }) => {
         <input
           ref={inputRef}
           placeholder="Search!"
-          onChange={({ target }) => searchState(target.value)}
+          onChange={({ target }) => setSearchValue(target.value)}
           type="text"
         />
       </div>

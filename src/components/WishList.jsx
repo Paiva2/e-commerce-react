@@ -5,9 +5,12 @@ import axios from "axios";
 import PlaceHolder from "./PlaceHolder";
 import { Helmet } from "react-helmet";
 import "./styles/WishList.css";
+import { GlobalContext } from "../context/GlobalContext";
+import { useContext } from "react";
 
-const WishList = ({ addToCart }) => {
+const WishList = () => {
   const [wishList, setWishList] = useState(undefined);
+  const { addToCart } = useContext(GlobalContext);
 
   useEffect(() => {
     callApi();

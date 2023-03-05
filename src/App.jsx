@@ -1,6 +1,6 @@
 import { React } from "react";
 import "./components/styles/App.css";
-import ProductsContext from "./components/ProductsContext";
+import ProductsRoutes from "./components/ProductsContext";
 import { GlobalContext } from "./context/GlobalContext";
 import { useContext } from "react";
 import PlaceHolder from "./components/PlaceHolder";
@@ -16,7 +16,7 @@ function App() {
         text={"Loading..."}
       />
     );
-  return <ProductsContext />;
+  return <ProductsRoutes />;
 }
 
 export default App;

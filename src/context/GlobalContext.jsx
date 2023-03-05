@@ -8,6 +8,13 @@ export const GlobalContext = createContext();
 export const GlobalStorage = ({ children }) => {
   const [data, setData] = useState("");
   const [loading, setLoading] = useState(true);
+  const [itensPerPage, setItensOnPage] = useState(10);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [searchValue, setSearchValue] = useState("");
+  const pageQuantity = data ? Math.ceil(data.length / itensPerPage) : undefined;
+  const initialPage = currentPage * itensPerPage;
+  const finalPage = initialPage + itensPerPage;
+  const pagesArr = [];
 
   useEffect(() => {
     callApi();
@@ -28,7 +35,26 @@ export const GlobalStorage = ({ children }) => {
       });
   };
 
-  const objectBody = (productData) => {                           
+  for (let i = 0; i < pageQuantity; i++) {
+    pagesArr.push(i + 1);
+  }
+
+  const inputValueLowerCase = searchValue.toLowerCase();
+  let filteredProducts = data
+    ? data.filter((product) =>
+        product.name.toLowerCase().includes(inputValueLowerCase)
+      )
+    : undefined;
+
+  let showItens = filteredProducts
+    ? filteredProducts.slice(initialPage, finalPage)
+    : undefined;
+
+  const showItensCopy = showItens;
+
+  const currentItensOnPage = searchValue ? filteredProducts : showItens;
+
+  const objectBody = (productData) => {
     const object = {
       id: productData.id,
       name: productData.name,
@@ -86,7 +112,22 @@ export const GlobalStorage = ({ children }) => {
   };
 
   return (
-    <GlobalContext.Provider value={{ data, addWishList, addToCart, loading }}>
+    <GlobalContext.Provider
+      value={{
+        data,
+        addWishList,
+        addToCart,
+        loading,
+        currentItensOnPage,
+        setSearchValue,
+        searchValue,
+        setCurrentPage,
+        currentPage,
+        pagesArr,
+        initialPage,
+        showItensCopy,
+      }}
+    >
       {children}
     </GlobalContext.Provider>
   );

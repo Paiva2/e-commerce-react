@@ -1,33 +1,24 @@
-import { React, useState } from "react";
+import { React, useState, useContext } from "react";
+import { Helmet } from "react-helmet";
+import { GlobalContext } from "../context/GlobalContext";
+import Modal from "react-modal";
+import PageButtons from "./PageButtons";
+import ProductModal from "./ProductModal";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import { AiOutlineHeart } from "react-icons/ai";
-import PageButtons from "./PageButtons";
-import ProductModal from "./ProductModal";
-import { Helmet } from "react-helmet";
 import { FaStar } from "react-icons/fa";
-import Modal from "react-modal";
 import "./styles/Products.css";
-import { GlobalContext } from "../context/GlobalContext";
-import { useContext } from "react";
-Modal.setAppElement("#root");
 
-const Products = ({
-  showItens,
-  addWishList,
-  addToCart,
-  setCurrentPage,
-  currentPage,
-  pagesArr,
-  initialPage,
-  data,
-  showItensCopy,
-}) => {
+const Products = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [clickedProduct, setclickedProduct] = useState([]);
   const [maxPriceVal, setMaxPriceVal] = useState(false);
   const [minPriceVal, setMinPriceVal] = useState(false);
   const stars = [1, 2, 3, 4, 5];
+
+  let { data, addWishList, addToCart, showItensCopy, currentItensOnPage } =
+    useContext(GlobalContext);
 
   const openModal = (...productClicked) => {
     setIsOpen(true);
@@ -57,9 +48,9 @@ const Products = ({
   const priceFilterResults = () => {
     const result =
       bothPricesFiltered.length >= 1
-        ? (showItens = bothPricesFiltered)
+        ? (currentItensOnPage = bothPricesFiltered)
         : onePriceFilter.length >= 1
-        ? (showItens = onePriceFilter)
+        ? (currentItensOnPage = onePriceFilter)
         : undefined;
 
     return result;
@@ -94,7 +85,7 @@ const Products = ({
           <div className="price-wrapper">
             <h2>Price</h2>
             <label htmlFor="max-price">
-              Max{" "}
+              Max
               <input
                 onChange={(e) => setMaxPriceVal(e.target.value)}
                 placeholder="ex: 200"
@@ -103,7 +94,7 @@ const Products = ({
               />
             </label>
             <label htmlFor="min-price">
-              Min{" "}
+              Min
               <input
                 onChange={(e) => setMinPriceVal(e.target.value)}
                 placeholder="ex: 30"
@@ -170,14 +161,10 @@ const Products = ({
           })}
         </div>
       </div>
-      <PageButtons
-        setCurrentPage={setCurrentPage}
-        currentPage={currentPage}
-        pagesArr={pagesArr}
-        initialPage={initialPage}
-      />
+      <PageButtons />
     </div>
   );
 };
 
 export default Products;
+Modal.setAppElement("#root");

@@ -1,13 +1,12 @@
-import React from "react";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { React, useContext } from "react";
+import { GlobalContext } from "../context/GlobalContext";
 import "./styles/PageButtons.css";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-const PageButtons = ({
-  setCurrentPage,
-  pagesArr,
-  currentPage,
-  initialPage,
-}) => {
+const PageButtons = () => {
+  const { setCurrentPage, currentPage, pagesArr, initialPage } =
+    useContext(GlobalContext);
+
   const pageArrowLeft = () => {
     if (!initialPage) return;
     setCurrentPage((oldVal) => oldVal - 1);
