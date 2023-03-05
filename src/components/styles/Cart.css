@@ -201,8 +201,13 @@
 
   .product-details img,
   .product-details {
-    height: 200px;
-    width: 140px;
+    height: 170px;
+    width: 170px;
+  }
+
+  .image-details {
+    overflow: hidden;
+    width: 155px;
   }
 
   .controls-cart {
@@ -219,7 +224,7 @@
 
   .cart-product {
     width: 340px;
-    justify-content: space-around;
+    justify-content: space-b;
   }
 
   .cart-product h2 {
