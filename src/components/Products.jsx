@@ -1,6 +1,6 @@
 import { React, useState, useContext } from "react";
 import { Helmet } from "react-helmet";
-import { GlobalContext } from "../context/GlobalContext";
+import { ProductsContext } from "../context/ProductsContext";
 import Modal from "react-modal";
 import PageButtons from "./PageButtons";
 import ProductModal from "./ProductModal";
@@ -18,7 +18,7 @@ const Products = () => {
   const stars = [1, 2, 3, 4, 5];
 
   let { data, addWishList, addToCart, showItensCopy, currentItensOnPage } =
-    useContext(GlobalContext);
+    useContext(ProductsContext);
 
   const openModal = (...productClicked) => {
     setIsOpen(true);

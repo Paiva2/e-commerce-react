@@ -1,9 +1,11 @@
 import React from "react";
 import { createContext, useState, useEffect } from "react";
+import apiBody from "./apiBody";
 import axios from "axios";
 import Swal from "sweetalert2";
+import actionAlert from "./actionAlert";
 
-export const GlobalContext = createContext();
+export const ProductsContext = createContext();
 
 export const GlobalStorage = ({ children }) => {
   const [data, setData] = useState("");
@@ -54,42 +56,9 @@ export const GlobalStorage = ({ children }) => {
 
   const currentItensOnPage = searchValue ? filteredProducts : showItens;
 
-  const objectBody = (productData) => {
-    const object = {
-      id: productData.id,
-      name: productData.name,
-      description: productData.description,
-      price: productData.price,
-      image: productData.image,
-      rating: productData.rating,
-      quantity: productData.quantity,
-    };
-    return object;
-  };
-
-  const actionAlert = (text, icon) => {
-    const Toast = Swal.mixin({
-      toast: true,
-      position: "bottom-end",
-      showConfirmButton: false,
-      timer: 1200,
-      timerProgressBar: true,
-      didOpen: (toast) => {
-        toast.addEventListener("mouseenter", Swal.stopTimer);
-        toast.addEventListener("mouseleave", Swal.resumeTimer);
-      },
-    });
-
-    Toast.fire({
-      icon: icon,
-      title: text,
-    });
-
-    return Toast;
-  };
   const addWishList = (product) => {
     axios
-      .post("http://localhost:3000/wishlist/", objectBody(product))
+      .post("http://localhost:3000/wishlist/", apiBody(product))
       .then(() => {
         callApi(), actionAlert("Added to wish list!", "success");
       })
@@ -101,18 +70,18 @@ export const GlobalStorage = ({ children }) => {
 
   const addToCart = (product) => {
     axios
-      .post("http://localhost:3000/cart/", objectBody(product))
+      .post("http://localhost:3000/cart/", apiBody(product))
       .then(() => {
         callApi(), actionAlert("Product added to cart!", "success");
       })
       .catch((err) => {
-        if (err)
-          return actionAlert("This product is already on cart!", "error");
+        if (err) actionAlert("This product is already on cart!", "error");
+        return;
       });
   };
 
   return (
-    <GlobalContext.Provider
+    <ProductsContext.Provider
       value={{
         data,
         addWishList,
@@ -129,6 +98,6 @@ export const GlobalStorage = ({ children }) => {
       }}
     >
       {children}
-    </GlobalContext.Provider>
+    </ProductsContext.Provider>
   );
 };

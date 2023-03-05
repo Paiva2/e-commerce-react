@@ -5,12 +5,12 @@ import axios from "axios";
 import PlaceHolder from "./PlaceHolder";
 import { Helmet } from "react-helmet";
 import "./styles/WishList.css";
-import { GlobalContext } from "../context/GlobalContext";
+import { ProductsContext } from "../context/ProductsContext";
 import { useContext } from "react";
 
 const WishList = () => {
   const [wishList, setWishList] = useState(undefined);
-  const { addToCart } = useContext(GlobalContext);
+  const { addToCart } = useContext(ProductsContext);
 
   useEffect(() => {
     callApi();
@@ -61,7 +61,7 @@ const WishList = () => {
                   <MdOutlineAddShoppingCart
                     className="add-to-cart-btn"
                     onClick={() => {
-                      addToCart(product), delWishItem(product.id);
+                      addToCart(product);
                     }}
                   />
                   <AiOutlineDelete

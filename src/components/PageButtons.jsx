@@ -1,11 +1,11 @@
 import { React, useContext } from "react";
-import { GlobalContext } from "../context/GlobalContext";
+import { ProductsContext } from "../context/ProductsContext";
 import "./styles/PageButtons.css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const PageButtons = () => {
   const { setCurrentPage, currentPage, pagesArr, initialPage } =
-    useContext(GlobalContext);
+    useContext(ProductsContext);
 
   const pageArrowLeft = () => {
     if (!initialPage) return;
