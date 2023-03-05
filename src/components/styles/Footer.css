@@ -55,3 +55,32 @@ footer {
 .terms h4:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 450px) {
+  footer {
+    height: auto;
+  }
+
+  .infos {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-text {
+    font-size: 11px;
+    font-weight: bold;
+  }
+
+  .terms {
+    font-size: 15px;
+  }
+
+  .infos h3 {
+    margin-top: 4px;
+  }
+
+  .infos-wrapper {
+    font-size: 19px;
+    border-bottom: 2px solid rgb(171, 162, 162);
+  }
+}

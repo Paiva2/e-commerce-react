@@ -189,3 +189,44 @@
 .total span {
   color: rgb(78, 180, 103);
 }
+
+@media (max-width: 450px) {
+  .cart-main-container {
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .product-details img,
+  .product-details {
+    height: 200px;
+    width: 140px;
+  }
+
+  .controls-cart {
+    width: auto;
+    height: auto;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .cart-container {
+    width: auto;
+  }
+
+  .cart-product {
+    width: 340px;
+    justify-content: space-around;
+  }
+
+  .cart-product h2 {
+    display: none;
+  }
+
+  .price {
+    height: auto;
+  }
+}

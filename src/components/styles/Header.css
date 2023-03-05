@@ -69,3 +69,42 @@
   transition: all 0.4s;
 }
 
+@media (max-width: 450px) {
+  .header {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid rgb(171, 162, 162);
+    height: 105px;
+  }
+
+  .header section {
+    font-size: 25px;
+    margin: 5px;
+  }
+
+  .header-buttons {
+    height: 33px;
+    width: 110px;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .search-input input {
+    width: 250px;
+  }
+
+  .search-input {
+    width: auto;
+  }
+
+  .header-buttons button,
+  .header-buttons,
+  .wish-list-header {
+    margin: 0px;
+  }
+
+  .wish-list button {
+    font-size: 25px;
+  }
+}
