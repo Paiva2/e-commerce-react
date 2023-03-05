@@ -75,8 +75,8 @@ export const GlobalStorage = ({ children }) => {
         callApi(), actionAlert("Product added to cart!", "success");
       })
       .catch((err) => {
-        if (err) actionAlert("This product is already on cart!", "error");
-        return;
+        if (err)
+          return actionAlert("This product is already on cart!", "error");
       });
   };
 
