@@ -133,9 +133,6 @@
 }
 
 @media (max-width: 450px) {
-  * {
-    outline: 1px solid red;
-  }
   .main-container {
     display: flex;
     flex-direction: column;

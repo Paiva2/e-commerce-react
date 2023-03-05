@@ -199,6 +199,10 @@
     margin-top: 10px;
   }
 
+  .card-payment {
+    align-self: center;
+  }
+
   .product-details img,
   .product-details {
     height: 170px;
