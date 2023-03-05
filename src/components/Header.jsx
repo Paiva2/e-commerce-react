@@ -1,17 +1,23 @@
-import { React, useRef } from "react";
+import { React, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { AiOutlineHeart } from "react-icons/ai";
+import { TiThMenu } from "react-icons/ti";
 import "./styles/Header.css";
 
 const Header = ({ searchState }) => {
   const inputRef = useRef();
+  const mobileBtn = useRef();
 
   const resetInput = () => {
     inputRef.current.value = "";
     searchState("");
+  };
+
+  const toggleMenu = () => {
+    mobileBtn.current.classList.toggle("is-active");
   };
 
   return (
@@ -32,7 +38,8 @@ const Header = ({ searchState }) => {
           type="text"
         />
       </div>
-      <section className="header-buttons">
+      <TiThMenu id="menu-mobile" onClick={toggleMenu} />
+      <section ref={mobileBtn} className="header-buttons">
         <div className="wish-list">
           <NavLink onClick={resetInput} to={"/wish-list"}>
             <button className="wish-list-header">

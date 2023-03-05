@@ -69,6 +69,10 @@
   transition: all 0.4s;
 }
 
+#menu-mobile {
+  visibility: hidden;
+}
+
 @media (max-width: 450px) {
   .header {
     width: auto;
@@ -76,15 +80,14 @@
     flex-direction: column;
     border-bottom: 2px solid rgb(171, 162, 162);
     height: 105px;
+    padding: 5px;
   }
 
   .header section {
     font-size: 25px;
-    margin: 5px;
   }
 
   .header-buttons {
-    height: 33px;
     width: 110px;
     align-items: center;
     justify-content: space-evenly;
@@ -96,15 +99,42 @@
 
   .search-input {
     width: auto;
+    margin: 5px;
   }
 
   .header-buttons button,
   .header-buttons,
   .wish-list-header {
     margin: 0px;
+    margin-top: 4px;
   }
 
   .wish-list button {
-    font-size: 25px;
+    font-size: 28px;
+  }
+
+  #menu-mobile {
+    display: flex;
+    font-size: 30px;
+    visibility: visible;
+  }
+
+  .header-buttons {
+    display: none;
+    transition: 1s all;
+  }
+
+  .is-active {
+    z-index: 100;
+    display: flex;
+    transition: 1s all;
+    width: 150px;
+    height: 40px;
+    visibility: visible;
+    position: absolute;
+    top: 110px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 3px 4px 7px -3px rgba(67, 66, 66, 0.75);
   }
 }
