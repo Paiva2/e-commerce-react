@@ -180,6 +180,16 @@
       "quantity": 1
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "id": "9",
+      "name": "Women's Leather Jacket",
+      "description": "Fitted leather jacket with zipper",
+      "price": 129.99,
+      "image": "https://i.postimg.cc/bvqxyRT1/Women-s-Leather-Jacket.jpg",
+      "rating": 4.8,
+      "quantity": 1
+    }
+  ],
   "wishlist": []
 }

@@ -190,6 +190,11 @@
   color: rgb(78, 180, 103);
 }
 
+.ps {
+  font-size: 12px;
+  margin-top: 15px;
+}
+
 @media (max-width: 450px) {
   .cart-main-container {
     flex-direction: column;

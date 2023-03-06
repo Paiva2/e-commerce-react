@@ -1,9 +1,8 @@
 import React from "react";
 import { createContext, useState, useEffect } from "react";
-import apiBody from "./apiBody";
+import apiBody from "./functions/apiBody";
 import axios from "axios";
-import Swal from "sweetalert2";
-import actionAlert from "./actionAlert";
+import actionAlert from "./functions/actionAlert";
 
 export const ProductsContext = createContext();
 
@@ -42,6 +41,7 @@ export const GlobalStorage = ({ children }) => {
   }
 
   const inputValueLowerCase = searchValue.toLowerCase();
+
   let filteredProducts = data
     ? data.filter((product) =>
         product.name.toLowerCase().includes(inputValueLowerCase)
@@ -53,7 +53,6 @@ export const GlobalStorage = ({ children }) => {
     : undefined;
 
   const showItensCopy = showItens;
-
   const currentItensOnPage = searchValue ? filteredProducts : showItens;
 
   const addWishList = (product) => {

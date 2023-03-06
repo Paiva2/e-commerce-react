@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from "react";
+import { React, useEffect, useRef, useState } from "react";
 import PlaceHolder from "./PlaceHolder";
 import { BsCartX } from "react-icons/bs";
 import { AiOutlineDelete } from "react-icons/ai";
@@ -8,12 +8,16 @@ import "./styles/Cart.css";
 
 const Cart = () => {
   const [cart, setCart] = useState(undefined);
+  const [promoCode, setPromoCode] = useState();
   const [totalQuantity, setTotalQuantity] = useState("");
-  const [totalPrice, setTotalPrice] = useState("");
+  const [totalResult, setTotalResult] = useState("");
+  const [total, setTotal] = useState();
+  const promoField = useRef();
+  const validPromoCode = "promo123";
 
   useEffect(() => {
     callApi();
-  }, []);
+  }, [totalQuantity, totalResult]);
 
   const callApi = () => {
     axios
@@ -26,9 +30,10 @@ const Cart = () => {
             .map((item) => item.quantity)
             .reduce((acc, item) => acc + item)
         );
-        setTotalPrice(
+        setTotalResult(
           resp.data.map((item) => item.price).reduce((acc, item) => acc + item)
         );
+        setTotal((totalQuantity * totalResult).toFixed(2));
       })
       .catch((error) => {
         if (error.response) console.warn("Error. Try Again Later.");
@@ -63,6 +68,17 @@ const Cart = () => {
           callApi();
         });
     }
+  };
+
+  const validatePromo = () => {
+    promoCode === validPromoCode
+      ? setTotal((prevValue) => {
+          const discount = (prevValue * 10) / 100;
+          return (prevValue - discount).toFixed(2);
+        })
+      : undefined;
+
+    promoField.current.value = "";
   };
 
   if (cart) {
@@ -138,7 +154,6 @@ const Cart = () => {
             );
           })}
         </div>
-
         <div className="card-payment">
           <div className="payment-title">
             <h1>RESUME</h1>
@@ -148,17 +163,26 @@ const Cart = () => {
               <h3>Shipping</h3>
               <input placeholder="Insert your zipccode" type="text" />
               <h3>Promo code</h3>
-              <input placeholder="Have a promo code?" type="text" />
+              <input
+                placeholder="Have a promo code?"
+                type="text"
+                onChange={(e) => setPromoCode(e.target.value)}
+                ref={promoField}
+              />
               <button className="confirm-shipping">Confirm</button>
             </div>
-
             <div className="total">
               <p>
-                TOTAL: <span>${(totalPrice * totalQuantity).toFixed(2)}</span>
+                TOTAL: <span>${total}</span>
               </p>
             </div>
           </div>
-          <button className="checkout-cart">Checkout</button>
+          <button onClick={validatePromo} className="checkout-cart">
+            Checkout
+          </button>
+          <p className="ps">
+            ps: promo code will only be activated on checkout
+          </p>
         </div>
       </div>
     );
