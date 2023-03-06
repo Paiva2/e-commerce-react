@@ -180,35 +180,6 @@
       "quantity": 1
     }
   ],
-  "cart": [
-    {
-      "id": "1",
-      "name": "Floral Women's Blouse",
-      "description": "Cotton blouse with floral print",
-      "price": 49.99,
-      "image": "https://i.postimg.cc/yWqRwhxg/Floral-Women-s-Blouse.jpg",
-      "rating": 4.5,
-      "quantity": 1
-    }
-  ],
-  "wishlist": [
-    {
-      "id": "1",
-      "name": "Floral Women's Blouse",
-      "description": "Cotton blouse with floral print",
-      "price": 49.99,
-      "image": "https://i.postimg.cc/yWqRwhxg/Floral-Women-s-Blouse.jpg",
-      "rating": 4.5,
-      "quantity": 1
-    },
-    {
-      "id": "2",
-      "name": "Men's T-Shirt",
-      "description": "Classic black t-shirt with white logo",
-      "price": 29.99,
-      "image": "https://i.postimg.cc/G22vYh62/Men-s-T-Shirt.jpg",
-      "rating": 3,
-      "quantity": 1
-    }
-  ]
+  "cart": [],
+  "wishlist": []
 }
