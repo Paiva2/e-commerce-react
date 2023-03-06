@@ -13,7 +13,21 @@ const Cart = () => {
   const [totalResult, setTotalResult] = useState("");
   const [total, setTotal] = useState();
   const promoField = useRef();
-  const validPromoCode = "promo123";
+
+  const validPromoCodes = [
+    {
+      code: "promo10",
+      discount: 10,
+    },
+    {
+      code: "promo20",
+      discount: 20,
+    },
+    {
+      code: "promo30",
+      discount: 30,
+    },
+  ];
 
   useEffect(() => {
     callApi();
@@ -71,12 +85,15 @@ const Cart = () => {
   };
 
   const validatePromo = () => {
-    promoCode === validPromoCode
-      ? setTotal((prevValue) => {
-          const discount = (prevValue * 10) / 100;
-          return (prevValue - discount).toFixed(2);
-        })
-      : undefined;
+    if (!promoField.current.value) return;
+    validPromoCodes.map((codes) => {
+      promoCode === codes.code
+        ? setTotal((prevValue) => {
+            const discount = (prevValue * codes.discount) / 100;
+            return (prevValue - discount).toFixed(2);
+          })
+        : undefined;
+    });
 
     promoField.current.value = "";
   };
@@ -169,7 +186,21 @@ const Cart = () => {
                 onChange={(e) => setPromoCode(e.target.value)}
                 ref={promoField}
               />
-              <button className="confirm-shipping">Confirm</button>
+              <div className="available-codes">
+                <h4>Available promo codes:</h4>
+                <div className="promo-codes">
+                  {validPromoCodes.map((code) => {
+                    return (
+                      <li>
+                        {code.code} - <b>{code.discount}% Discount</b>
+                      </li>
+                    );
+                  })}
+                </div>
+              </div>
+              <div className="confirm-shipping-container">
+                <button className="confirm-shipping">Confirm</button>
+              </div>
             </div>
             <div className="total">
               <p>
