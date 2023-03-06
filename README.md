@@ -23,6 +23,7 @@ bash
 
 # Previews
 ### See a video demo here: [Demo](https://imgur.com/7YOOBNn)
+### See a video demo on mobile res here: [Demo](https://imgur.com/a/U9VAKQO)
 
 <img src="./demo-imgs/Captura de tela de 2023-03-05 02-24-29.png">
 
