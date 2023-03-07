@@ -1,4 +1,4 @@
-import { React, useState, useContext } from "react";
+import { React, useState, useContext, useRef, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { ProductsContext } from "../context/ProductsContext";
 import Modal from "react-modal";
@@ -15,10 +15,14 @@ const Products = () => {
   const [clickedProduct, setclickedProduct] = useState([]);
   const [maxPriceVal, setMaxPriceVal] = useState(false);
   const [minPriceVal, setMinPriceVal] = useState(false);
+  const [menChecked, setMenChecked] = useState(false);
+  const [femaleChecked, setfemaleChecked] = useState(false);
   const stars = [1, 2, 3, 4, 5];
-
   let { data, addWishList, addToCart, showItensCopy, currentItensOnPage } =
     useContext(ProductsContext);
+
+  const male = useRef();
+  const female = useRef();
 
   const openModal = (...productClicked) => {
     setIsOpen(true);
@@ -42,7 +46,9 @@ const Products = () => {
   });
 
   const onePriceFilter = data.filter((item) => {
-    if (item.price <= maxPriceVal || item.price >= minPriceVal) return item;
+    if (item.price <= maxPriceVal || item.price >= minPriceVal) {
+      return item;
+    }
   });
 
   const priceFilterResults = () => {
@@ -52,12 +58,43 @@ const Products = () => {
         : onePriceFilter.length >= 1
         ? (currentItensOnPage = onePriceFilter)
         : undefined;
+    return result;
+  };
+
+  const genreFilterResults = () => {
+    const result = menChecked
+      ? menFilter
+      : femaleChecked
+      ? femaleFilter
+      : menChecked && femaleChecked
+      ? showItensCopy
+      : undefined;
 
     return result;
   };
 
+  const menCheckBox = () => {
+    setMenChecked(!menChecked);
+  };
+  const femaleCheckBox = () => {
+    setfemaleChecked(!femaleChecked);
+  };
+
+  const menFilter = data.filter((item) => {
+    if (item.name.startsWith("Men")) return item;
+  });
+
+  const femaleFilter = data.filter((item) => {
+    if (item.name.startsWith("Women")) return item;
+  });
+
   const resultProducts =
-    !minPriceVal && !maxPriceVal ? showItensCopy : priceFilterResults();
+    minPriceVal || maxPriceVal
+      ? priceFilterResults()
+      : menChecked || femaleChecked
+      ? genreFilterResults()
+      : showItensCopy;
+
   return (
     <div className="main-container">
       <Helmet>
@@ -73,15 +110,31 @@ const Products = () => {
         <div className="aside-container">
           <div className="aside-genre">
             <h2>Genre</h2>
+
             <label htmlFor="male">
               Male
-              <input type="checkbox" name="male" />
+              <input
+                value="Men"
+                ref={male}
+                onChange={menCheckBox}
+                checked={menChecked}
+                type="checkbox"
+                name="male"
+              />
             </label>
             <label htmlFor="female">
               Female
-              <input type="checkbox" name="female" />
+              <input
+                value="Women"
+                ref={female}
+                checked={femaleChecked}
+                onChange={femaleCheckBox}
+                type="checkbox"
+                name="female"
+              />
             </label>
           </div>
+
           <div className="price-wrapper">
             <h2>Price</h2>
             <label htmlFor="max-price">
