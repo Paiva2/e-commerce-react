@@ -25,7 +25,7 @@ export const GlobalStorage = ({ children }) => {
     axios
       .get("http://localhost:3000/products")
       .then((resp) => {
-        setData(resp.data.sort((a, b) => +a.price - +b.price));
+        setData(resp.data.sort((a, b) => Number(a.price) - Number(b.price)));
         setLoading(false);
       })
       .catch((error) => {

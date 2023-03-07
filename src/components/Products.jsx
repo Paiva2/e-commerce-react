@@ -62,13 +62,14 @@ const Products = () => {
   };
 
   const genreFilterResults = () => {
-    const result = menChecked
-      ? menFilter
-      : femaleChecked
-      ? femaleFilter
-      : menChecked && femaleChecked
-      ? showItensCopy
-      : undefined;
+    const result =
+      menChecked && femaleChecked
+        ? data
+        : menChecked
+        ? menFilter
+        : femaleChecked
+        ? femaleFilter
+        : undefined;
 
     return result;
   };
